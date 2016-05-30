@@ -14,6 +14,8 @@ ZSH_THEME="dstufft"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rake="noglob rake"
 
+alias canarymod="java -jar canarymod.jar"
+
 # Mac Helpers
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
@@ -124,3 +126,7 @@ bindkey -v
 #alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 #alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

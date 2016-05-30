@@ -30,6 +30,9 @@ set colorcolumn=+1
 
 " Numbers
 set number
+set relativenumber
+" Toggle relative line numbers
+"let g:NumberToggleTrigger="<leader>r"
 set numberwidth=5
 
 "sm:    flashes matching brackets or parentheses
@@ -334,9 +337,6 @@ nnoremap <Leader>H :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 
 " Pomodoro Thyme
 nmap <leader>T :!thyme -d<cr><cr>
-
-" Toggle relative line numbers
-let g:NumberToggleTrigger="<leader>r"
 
 " HardTime
 let g:hardtime_default_on = 1

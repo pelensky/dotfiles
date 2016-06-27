@@ -32,7 +32,7 @@ set colorcolumn=+1
 set number
 set relativenumber
 " Toggle relative line numbers
-"let g:NumberToggleTrigger="<leader>r"
+let g:NumberToggleTrigger="<leader>r"
 set numberwidth=5
 
 "sm:    flashes matching brackets or parentheses

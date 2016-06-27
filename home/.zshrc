@@ -64,7 +64,7 @@ alias hissy_fit='echo "I can'\''t work under these conditions" | lolcat; sleep 1
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx tmux github fasd history-substring-search zsh-syntax-highlighting nyan)
+plugins=(git osx tmux github fasd history-substring-search zsh-syntax-highlighting zsh-autosuggestions nyan)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -125,8 +125,3 @@ bindkey -v
 
 #alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 #alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"

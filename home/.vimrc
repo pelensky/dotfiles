@@ -9,8 +9,6 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-"colorscheme jellybeans
-
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -35,7 +33,7 @@ set relativenumber
 let g:NumberToggleTrigger="<leader>r"
 set numberwidth=5
 
-"sm:    flashes matching brackets or parentheses
+"sm: flashes matching brackets or parentheses
 set showmatch
 
 " Softtabs, 2 spaces
@@ -236,10 +234,6 @@ nnoremap <leader>l :bnext<CR>
 " No highlight after a search
 nnoremap <leader><space> :noh<cr>
 
-" Paste mode in and out
-"nnoremap <leader>p :set paste<CR>
-"nnoremap <leader>np :set nopaste<CR>
-
 " Create split, close split
 nnoremap <leader>w <C-w>v<C-w>1
 nnoremap <leader>q <C-w>q
@@ -249,7 +243,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 " JJ escape
 inoremap jj <ESC>:wa<CR>
-
 au FocusLost * :wa
 
 "save and run last command

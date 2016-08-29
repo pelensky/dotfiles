@@ -337,8 +337,11 @@ let g:hardtime_timeout = 900
 let g:hardtime_showmsg = 1
 let g:hardtime_maxcount = 2
 
+"Rainbow Plugin Options (luochen1990/rainbow)
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
 " Clojure Syntax Formatting
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces

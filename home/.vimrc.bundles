@@ -31,8 +31,8 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'takac/vim-hardtime'
 Plugin 'rizzatti/dash.vim'
 Plugin 'guns/vim-clojure-static'
-Plugin 'kien/rainbow_parentheses.vim'
-" Plugin 'vim-scripts/tComment'
+"Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 
 " Da Colourz
 Plugin 'xero/sourcerer.vim'

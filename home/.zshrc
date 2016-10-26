@@ -1,8 +1,11 @@
-ZSH_THEME="dstufft"
+#ZSH_THEME="dstufft"
+ZSH_THEME="aussiegeek"
 
 alias rake="noglob rake"
 
-alias canarymod="java -jar canarymod.jar"
+alias serve="jekyll serve"
+
+alias record="asciinema rec"
 
 # Mac Helpers
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"

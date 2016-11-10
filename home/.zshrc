@@ -1,5 +1,4 @@
-#ZSH_THEME="dstufft"
-ZSH_THEME="aussiegeek"
+ZSH_THEME="dstufft"
 
 alias rake="noglob rake"
 
@@ -21,11 +20,14 @@ plugins=(git osx tmux github fasd history-substring-search zsh-syntax-highlighti
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/roidriscoll/.rvm/gems/ruby-2.1.1/bin:/Users/roidriscoll/.rvm/gems/ruby-2.1.1@global/bin:/Users/roidriscoll/.rvm/rubies/ruby-2.1.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/roidriscoll/.rvm/bin"
+export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/roidriscoll/.rvm/gems/ruby-2.3.1/bin:/Users/roidriscoll/.rvm/gems/ruby-2.3.1@global/bin:/Users/roidriscoll/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/roidriscoll/.rvm/bin"
 
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' -c 'nnoremap i <nop>' -"
 
 export EDITOR="/usr/bin/vim"
+
+# sets vi keybinding
+bindkey -v
 
 alias cdh='cd ~/.homesick/repos/home-files/home'
 alias hup='cdh && sh ~/.homesick/repos/home-files/commit.sh && source ~/.zshrc && cd - && clear'
@@ -53,6 +55,4 @@ alias s="~/chat.txt << "
 
 alias rubes="ruby -run -ehttpd . -p8000"
 alias roigrok="ngrok -subdomain=roi 8000"
-
-bindkey -v
 

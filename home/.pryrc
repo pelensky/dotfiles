@@ -1,4 +1,7 @@
-Pry.config.prompt = [proc { "ᚹᚱᛘ ᛬ " },
+#Pry.config.prompt = [proc { "ᚹᚱᛘ ᛬ " },
+                     #proc { "     | " }]
+
+Pry.config.prompt = [proc { "::: " },
                      proc { "     | " }]
 
 # switch default editor for pry to vim

@@ -6,6 +6,8 @@ alias serve="jekyll serve"
 
 alias record="asciinema rec"
 
+alias tree="tree -I '.git|node_modules|bower_components'"
+
 # Mac Helpers
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"

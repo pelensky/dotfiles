@@ -36,13 +36,13 @@ To install, first install [homesick](https://github.com/technicalpickles/homesic
 
     gem install homesick
 
-Next step is to FORK this repository. Clone it to your local machine, and make sure you do a find-and-replace across the entire repo for `roidriscoll` and replace it with the name of your User folder. Then go into the .gitconfig file and make sure you change your Git username and email address to your relevant details, unless you want me taking credit for your commits :)
+Next step is to FORK this repository. Clone it to your local machine, and make sure you do a find-and-replace across the entire repo for `dan` and replace it with the name of your User folder. Then go into the .gitconfig file and make sure you change your Git username and email address to your relevant details, unless you want me taking credit for your commits :)
 
 Now commit and push back up to your remote fork. At this point, I would advise you delete the clone on your local machine as you will be re-cloning this via `homesick` so to avoid confusion it's best to have just one version of the repo cloned locally.
 
 Next, use the homesick command to clone this repository:
 
-    homesick clone git://github.com/roidriscoll/home-files.git
+    homesick clone git://github.com/dan/home-files.git
 
 you can now link its contents into your home dir:
 

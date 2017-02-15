@@ -1,10 +1,10 @@
 [user]
-    name = Roi Driscoll
-    email = roi.driscoll@gmail.com
+    name = Dan PElensky
+    email = dan@pelensky.com
 [push]
     default = simple
 [core]
-	excludesfile = /Users/roidriscoll/.gitignore
+	excludesfile = /Users/dan/.gitignore
     editor = vim
     ;editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 [color]

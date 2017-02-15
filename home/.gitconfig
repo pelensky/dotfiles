@@ -4,7 +4,7 @@
 [push]
     default = simple
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/roidriscoll/.gitignore
     editor = vim
     ;editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 [color]

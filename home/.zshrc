@@ -1,4 +1,4 @@
-ZSH_THEME="dstufft"
+ZSH_THEME="af-magic"
 
 alias rake="noglob rake"
 

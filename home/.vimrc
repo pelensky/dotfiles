@@ -28,10 +28,7 @@ set colorcolumn=+1
 
 " Numbers
 set number
-set relativenumber
-" Toggle relative line numbers
-let g:NumberToggleTrigger="<leader>r"
-set numberwidth=5
+set norelativenumber
 
 "sm: flashes matching brackets or parentheses
 set showmatch

@@ -1,4 +1,4 @@
-" Use Vim settings, rather then Vi settings. This setting must be as early as
+
 " possible, as it has side effects.
 set nocompatible
 
@@ -166,6 +166,7 @@ let NERDTreeShowHidden = 1
 " map enter to activating a node
 let NERDTreeMapActivateNode='<CR>'
 let NERDTreeIgnore=['\.git','\.DS_Store','\.pdf', '.beam']
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 "" Shortcuts!!
 
@@ -345,3 +346,6 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "au Syntax * RainbowParenthesesLoadRound
 "au Syntax * RainbowParenthesesLoadSquare
 "au Syntax * RainbowParenthesesLoadBraces
+
+" Mocha
+let g:mocha_js_command = "!mocha -R nyan" 

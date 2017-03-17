@@ -32,7 +32,7 @@ Plugin 'takac/vim-hardtime'
 Plugin 'rizzatti/dash.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'craigemery/vim-autotag'
-"Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'luochen1990/rainbow'
 
 " Da Colourz
@@ -75,6 +75,6 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'mustache/vim-mustache-handlebars'
-
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype on

@@ -28,7 +28,6 @@ set colorcolumn=+1
 
 " Numbers
 set number
-set norelativenumber
 
 "sm: flashes matching brackets or parentheses
 set showmatch

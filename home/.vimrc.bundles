@@ -40,10 +40,10 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'luochen1990/rainbow'
 
 " Da Colourz
-Plugin 'xero/sourcerer.vim'
+"Plugin 'xero/sourcerer.vim'
 "Plugin 'morhetz/gruvbox'
 "Plugin 'keith/parsec.vim'
-"Plugin 'AlessandroYorba/Sierra'
+Plugin 'AlessandroYorba/Sierra'
 
 
 " Auto align

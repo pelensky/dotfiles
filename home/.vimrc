@@ -328,7 +328,7 @@ nnoremap j gj
 nnoremap k gk
 
 " New Theme <3
-colorscheme sourcerer
+colorscheme sierra
 
 " Setting dark mode
 set background=dark

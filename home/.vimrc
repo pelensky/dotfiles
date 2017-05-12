@@ -1,4 +1,4 @@
-
+" Use Vim settings, rather then Vi settings. This setting must be as early as
 " possible, as it has side effects.
 set nocompatible
 
@@ -24,10 +24,14 @@ set complete=.,w,b,u,t,i
 
 " Make it obvious where 80 characters is
 set textwidth=80
-set colorcolumn=+1
+set colorcolumn=+2
 
 " Numbers
 set number
+set relativenumber
+" Toggle relative line numbers
+let g:NumberToggleTrigger="<leader>r"
+set numberwidth=5
 
 "sm: flashes matching brackets or parentheses
 set showmatch
@@ -69,6 +73,19 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
+" CtrlP auto cache clearing.
+function! SetupCtrlP()
+  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+    augroup CtrlPExtension
+      autocmd!
+      autocmd FocusGained  * CtrlPClearCache
+      autocmd BufWritePost * CtrlPClearCache
+    augroup END
+  endif
+endfunction
+if has("autocmd")
+  autocmd VimEnter * :call SetupCtrlP()
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -80,6 +97,11 @@ filetype plugin indent on
 
 augroup vimrcEx
   autocmd!
+
+  set nocompatible
+  if has("autocmd")
+    filetype indent plugin on
+  endif
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
@@ -162,7 +184,6 @@ let NERDTreeShowHidden = 1
 " map enter to activating a node
 let NERDTreeMapActivateNode='<CR>'
 let NERDTreeIgnore=['\.git','\.DS_Store','\.pdf', '.beam']
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 "" Shortcuts!!
 
@@ -238,11 +259,11 @@ nnoremap <leader>q <C-w>q
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
-" JJ escape
-inoremap jj <ESC>:wa<CR>
+" JJ save all and escape
+inoremap jj <ESC>:wa<CR> \| :echo "it's cool, you saved all the things" <CR>
 au FocusLost * :wa
 
-"save and run last command
+" save and run last command
 nnoremap <CR> :wa<CR>:!!<CR>
 noremap <C-j> <ESC>:wa<CR>:!!<CR>
 
@@ -281,9 +302,6 @@ map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0
 let g:EasyMotion_smartcase = 1
 
-" Two keyword search
-nmap s <Plug>(easymotion-s2)
-
 " such very magic
 :nnoremap / /\v
 :cnoremap %s/ %s/\v
@@ -310,7 +328,7 @@ nnoremap j gj
 nnoremap k gk
 
 " New Theme <3
-colorscheme sourcerer
+colorscheme sierra
 
 " Setting dark mode
 set background=dark
@@ -329,10 +347,10 @@ nnoremap <Leader>H :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 nmap <leader>T :!thyme -d<cr><cr>
 
 " HardTime
-let g:hardtime_default_on = 1
-let g:hardtime_timeout = 900
-let g:hardtime_showmsg = 1
-let g:hardtime_maxcount = 2
+"let g:hardtime_default_on = 1
+"let g:hardtime_timeout = 900
+"let g:hardtime_showmsg = 1
+"let g:hardtime_maxcount = 2
 
 "Rainbow Plugin Options (luochen1990/rainbow)
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -342,6 +360,19 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "au Syntax * RainbowParenthesesLoadRound
 "au Syntax * RainbowParenthesesLoadSquare
 "au Syntax * RainbowParenthesesLoadBraces
+
+Bundle 'christoomey/vim-sort-motion'
+
+" =========================================
+" Added by Naz
+" =========================================
+
+" Auto indent curly braces
+inoremap {<cr> {<cr>}<c-o>O
+
+" =========================================
+" Added by Dan
+" =========================================
 
 " Mocha
 let g:mocha_js_command = "!mocha -R nyan" 

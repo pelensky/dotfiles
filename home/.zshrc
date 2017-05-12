@@ -50,6 +50,16 @@ mcd() { # creates a directory and places you in it
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+#Junit
+export JUNIT_HOME="$HOME/java"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
+
+#Medium
+export MEDIUM_USER_ID="1b122721308038dbc8b286ce6256d80efc887dd09914d4ebc7c5fbc4b6d95bae8"
+export MEDIUM_INTEGRATION_TOKEN="2e70dfec4a2add03b5a588beb5288a3cf2ba6253bf686a50cb78533f688b43442"
+
+
 # Config for 'z': http://jilles.me/badassify-your-terminal-and-shell/
 . `brew --prefix`/etc/profile.d/z.sh
 source /usr/local/share/zsh/site-functions

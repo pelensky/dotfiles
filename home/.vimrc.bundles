@@ -10,13 +10,17 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'christoomey/vim-run-interactive'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'pbrisbin/vim-mkdir'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
@@ -24,11 +28,11 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'takac/vim-hardtime'
+Plugin 'vim-scripts/ReplaceWithRegister'
+"Plugin 'takac/vim-hardtime'
 Plugin 'rizzatti/dash.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'craigemery/vim-autotag'
@@ -36,9 +40,10 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'luochen1990/rainbow'
 
 " Da Colourz
-Plugin 'xero/sourcerer.vim'
+"Plugin 'xero/sourcerer.vim'
 "Plugin 'morhetz/gruvbox'
 "Plugin 'keith/parsec.vim'
+Plugin 'AlessandroYorba/Sierra'
 
 
 " Auto align
@@ -67,7 +72,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'pivotal/tmux-config'
 
 Plugin 'danro/rename.vim'
-Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'Lokaltog/vim-easymotion'
 Plugin 'yssl/QFEnter'
 Plugin 'elzr/vim-json'
 Plugin 'sjl/vitality.vim'
@@ -75,6 +80,18 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'christoomey/vim-tmux-navigator'
+
+" =========================================
+" Added by Naz
+" =========================================
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-line'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'Townk/vim-autoclose'
+Plugin 'vim-scripts/closetag.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+
+
 call vundle#end()
 filetype on

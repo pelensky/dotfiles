@@ -208,6 +208,9 @@ nmap <leader>te :tabedit
 nmap <F1> <Esc>
 map! <F1> <Esc>
 
+" JJ escape
+inoremap jj <Esc>
+
 " <leader>F to begin searching with ag
 map <leader>F :Ag<space>
 
@@ -259,9 +262,10 @@ nnoremap <leader>q <C-w>q
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
-" JJ save all and escape
-inoremap jj <ESC>:wa<CR> \| :echo "it's cool, you saved all the things" <CR>
+" KK save all and escape
+inoremap kk <ESC>:wa<CR> \| :echo "it's cool, you saved all the things" <CR>
 au FocusLost * :wa
+
 
 " save and run last command
 nnoremap <CR> :wa<CR>:!!<CR>
@@ -273,7 +277,7 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 " source vimrc
 nnoremap <leader>es :so $MYVIMRC
 
-"make ctrl-c work with vim on a mac
+"make ctrl-c work with vim on a mc
 vnoremap <C-c> :w !pbcopy<CR><CR> noremap <C-v> :r !pbpaste<CR><CR>
 
 autocmd FileType javascript inoremap (; ();<Esc>hi
@@ -375,4 +379,4 @@ inoremap {<cr> {<cr>}<c-o>O
 " =========================================
 
 " Mocha
-let g:mocha_js_command = "!mocha -R nyan" 
+let g:mocha_js_command = "!mocha -R nyan"

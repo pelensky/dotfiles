@@ -72,3 +72,5 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 
 export NVM_DIR="/Users/dan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+eval $(thefuck --alias)

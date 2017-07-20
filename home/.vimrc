@@ -2,13 +2,16 @@
 " possible, as it has side effects.
 set nocompatible
 
+filetype plugin indent on
+
 " Change <Leader>
 let mapleader = ","
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-
+set nosmartindent
+set autoindent
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -90,14 +93,12 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-filetype plugin indent on
-
 augroup vimrcEx
   autocmd!
 
   set nocompatible
   if has("autocmd")
-    filetype indent plugin on
+  filetype indent plugin on
   endif
 
   " When editing a file, always jump to the last known cursor position.
@@ -374,6 +375,9 @@ inoremap {<cr> {<cr>}<c-o>O
 " =========================================
 " Added by Dan
 " =========================================
-
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^defn']
+let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
 " Mocha
 let g:mocha_js_command = "!mocha -R nyan"
+set clipboard=unnamed

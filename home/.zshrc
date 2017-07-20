@@ -74,3 +74,6 @@ export NVM_DIR="/Users/dan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 eval $(thefuck --alias)
+
+# added by travis gem
+[ -f /Users/dan/.travis/travis.sh ] && source /Users/dan/.travis/travis.sh

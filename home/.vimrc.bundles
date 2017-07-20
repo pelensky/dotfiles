@@ -34,31 +34,19 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/ReplaceWithRegister'
 "Plugin 'takac/vim-hardtime'
 Plugin 'rizzatti/dash.vim'
-Plugin 'guns/vim-clojure-static'
 Plugin 'craigemery/vim-autotag'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'luochen1990/rainbow'
 
 " Da Colourz
-"Plugin 'xero/sourcerer.vim'
-"Plugin 'morhetz/gruvbox'
-"Plugin 'keith/parsec.vim'
 Plugin 'AlessandroYorba/Sierra'
-
-
-" Auto align
-" Plugin 'vim-scripts/vimball'
-" Plugin 'vim-scripts/Align'
-" Plugin 'vim-scripts/AutoAlign'
 
 " Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-
 Plugin 'pangloss/vim-javascript'
-
 Plugin 'rking/ag.vim'
 
 " Nice status bar
@@ -72,26 +60,30 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'pivotal/tmux-config'
 
 Plugin 'danro/rename.vim'
-"Plugin 'Lokaltog/vim-easymotion'
 Plugin 'yssl/QFEnter'
 Plugin 'elzr/vim-json'
 Plugin 'sjl/vitality.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'mustache/vim-mustache-handlebars'
 
 " =========================================
 " Added by Naz
 " =========================================
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-line'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'Townk/vim-autoclose'
-Plugin 'vim-scripts/closetag.vim'
-Plugin 'michaeljsmith/vim-indent-object'
+"Plugin 'kana/vim-textobj-user'
+"Plugin 'kana/vim-textobj-line'
+"Plugin 'kana/vim-textobj-entire'
+"Plugin 'nelstrom/vim-textobj-rubyblock'
+"Plugin 'Townk/vim-autoclose'
+"Plugin 'vim-scripts/closetag.vim'
 
+" =========================================
+" Added by Dan
+" =========================================
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
+Plugin 'paredit.vim'
+Plugin 'guns/vim-clojure-static'
 
 call vundle#end()
 filetype on

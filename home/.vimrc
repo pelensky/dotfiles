@@ -63,12 +63,12 @@ set spelllang=en_gb
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
@@ -87,6 +87,12 @@ if has("autocmd")
   autocmd VimEnter * :call SetupCtrlP()
 endif
 
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+\ 'file': '\.so$\|\.dat$|\.DS_Store$'
+\ }
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -98,16 +104,16 @@ augroup vimrcEx
 
   set nocompatible
   if has("autocmd")
-  filetype indent plugin on
+    filetype indent plugin on
   endif
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler (happens when dropping a file on gvim).
   autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
 
   " Cucumber navigation commands
   autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
@@ -158,19 +164,19 @@ set splitbelow
 set splitright
 
 " Open the Rails ApiDock page for the word under cursor, using the 'open'
-  " command
+" command
 let g:browser = 'open '
 
 function! OpenRailsDoc(keyword)
-let url = 'http://apidock.com/rails/'.a:keyword
-exec '!'.g:browser.' '.url
+  let url = 'http://apidock.com/rails/'.a:keyword
+  exec '!'.g:browser.' '.url
 endfunction
 
 " Open the Ruby ApiDock page for the word under cursor, using the 'open'
 " command
 function! OpenRubyDoc(keyword)
-let url = 'http://apidock.com/ruby/'.a:keyword
-exec '!'.g:browser.' '.url
+  let url = 'http://apidock.com/ruby/'.a:keyword
+  exec '!'.g:browser.' '.url
 endfunction
 
 " NERDTree
@@ -205,9 +211,6 @@ nmap <leader>te :tabedit
 " Remap F1 from Help to ESC.  No more accidents.
 nmap <F1> <Esc>
 map! <F1> <Esc>
-
-" JJ escape
-inoremap jj <Esc>
 
 " <leader>F to begin searching with ag
 map <leader>F :Ag<space>
@@ -253,17 +256,15 @@ nnoremap <leader>l :bnext<CR>
 " No highlight after a search
 nnoremap <leader><space> :noh<cr>
 
+"This unsets the 'last search pattern' register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 " Create split, close split
 nnoremap <leader>w <C-w>v<C-w>1
 nnoremap <leader>q <C-w>q
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
-
-" KK save all and escape
-inoremap kk <ESC>:wa<CR> \| :echo "it's cool, you saved all the things" <CR>
-au FocusLost * :wa
-
 
 " save and run last command
 nnoremap <CR> :wa<CR>:!!<CR>
@@ -330,6 +331,7 @@ nnoremap j gj
 nnoremap k gk
 
 " New Theme <3
+let g:sierra_Campfire = 1
 colorscheme sierra
 
 " Setting dark mode
@@ -349,10 +351,16 @@ nnoremap <Leader>H :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 nmap <leader>T :!thyme -d<cr><cr>
 
 " HardTime
-"let g:hardtime_default_on = 1
-"let g:hardtime_timeout = 900
-"let g:hardtime_showmsg = 1
-"let g:hardtime_maxcount = 2
+let g:hardtime_default_on = 1
+let g:hardtime_timeout = 900
+let g:hardtime_showmsg = 1
+let g:hardtime_maxcount = 2
+
+" Disable arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 
 "Rainbow Plugin Options (luochen1990/rainbow)
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle

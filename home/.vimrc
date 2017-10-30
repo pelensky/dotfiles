@@ -357,10 +357,10 @@ let g:hardtime_showmsg = 1
 let g:hardtime_maxcount = 2
 
 " Disable arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+nnoremap <up> <Nop>
+nnoremap <down> <Nop>
+nnoremap <left> <Nop>
+nnoremap <right> <Nop>
 
 "Rainbow Plugin Options (luochen1990/rainbow)
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -386,6 +386,15 @@ inoremap {<cr> {<cr>}<c-o>O
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^defn']
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
+
 " Mocha
 let g:mocha_js_command = "!mocha -R nyan"
+
+" Copy and Paste out of vim
 set clipboard=unnamed
+
+" Save errors even after file is saved
+set undodir=~/.vim/undo//
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload

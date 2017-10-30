@@ -85,6 +85,10 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
 Plugin 'paredit.vim'
 Plugin 'guns/vim-clojure-static'
+Plugin 'elmcast/elm-vim'
+Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 filetype on

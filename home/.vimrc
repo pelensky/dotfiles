@@ -351,10 +351,10 @@ nnoremap <Leader>H :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 nmap <leader>T :!thyme -d<cr><cr>
 
 " HardTime
-let g:hardtime_default_on = 1
-let g:hardtime_timeout = 900
-let g:hardtime_showmsg = 1
-let g:hardtime_maxcount = 2
+ let g:hardtime_default_on = 1
+ let g:hardtime_timeout = 900
+ let g:hardtime_showmsg = 1
+ let g:hardtime_maxcount = 2
 
 " Disable arrow keys
 nnoremap <up> <Nop>

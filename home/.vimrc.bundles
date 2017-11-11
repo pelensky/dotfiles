@@ -89,6 +89,7 @@ Plugin 'elmcast/elm-vim'
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'digitaltoad/vim-pug'
 
 call vundle#end()
 filetype on

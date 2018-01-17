@@ -89,9 +89,9 @@ endif
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-\ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-\ 'file': '\.so$\|\.dat$|\.DS_Store$'
-\ }
+      \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+      \ }
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -181,6 +181,7 @@ endfunction
 
 " NERDTree
 let NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize=20
 " colored NERD Tree
 let NERDChristmasTree = 1
 let NERDTreeHighlightCursorline = 1
@@ -331,11 +332,13 @@ nnoremap j gj
 nnoremap k gk
 
 " New Theme <3
-let g:sierra_Campfire = 1
-colorscheme sierra
+"let g:sierra_Campfire = 1
+"colorscheme sierra
+colorscheme nova
 
 " Setting dark mode
 set background=dark
+set t_Co=256
 
 " Supercharges '%' to work on do-end, def-end, class-end, module-end etc.
 runtime macros/matchit.vim
@@ -351,10 +354,10 @@ nnoremap <Leader>H :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 nmap <leader>T :!thyme -d<cr><cr>
 
 " HardTime
- let g:hardtime_default_on = 1
- let g:hardtime_timeout = 900
- let g:hardtime_showmsg = 1
- let g:hardtime_maxcount = 2
+let g:hardtime_default_on = 1
+let g:hardtime_timeout = 900
+let g:hardtime_showmsg = 1
+let g:hardtime_maxcount = 2
 
 " Disable arrow keys
 nnoremap <up> <Nop>
@@ -363,7 +366,7 @@ nnoremap <left> <Nop>
 nnoremap <right> <Nop>
 
 "Rainbow Plugin Options (luochen1990/rainbow)
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+"let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 " Clojure Syntax Formatting
 "au VimEnter * RainbowParenthesesToggle
@@ -372,10 +375,6 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "au Syntax * RainbowParenthesesLoadBraces
 
 Bundle 'christoomey/vim-sort-motion'
-
-" =========================================
-" Added by Naz
-" =========================================
 
 " Auto indent curly braces
 inoremap {<cr> {<cr>}<c-o>O
@@ -398,3 +397,7 @@ set undodir=~/.vim/undo//
 set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+
+" JSX
+let g:jsx_ext_required = 0
+

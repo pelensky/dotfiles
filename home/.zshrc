@@ -74,3 +74,4 @@ eval $(thefuck --alias)
 # added by travis gem
 [ -f /Users/dan/.travis/travis.sh ] && source /Users/dan/.travis/travis.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ alias tmux="TERM=screen-256color-bce tmux"

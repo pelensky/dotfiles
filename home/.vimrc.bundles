@@ -12,11 +12,28 @@ Plugin 'gmarik/Vundle.vim'
 " Define bundles via Github repos
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'w0rp/ale'
+Plugin 'roman/golden-ratio'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'bling/vim-airline'
+Plugin 'pivotal/tmux-config'
+
+" Da Colourz
+Plugin 'trevordmiller/nova-vim'
+
+
 "Plugin 'junegunn/vim-easy-align'
 "Plugin 'AndrewRadev/splitjoin.vim'
 "Plugin 'christoomey/vim-run-interactive'
 "Plugin 'kchmck/vim-coffee-script'
-Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'pbrisbin/vim-mkdir'
 "Plugin 'tpope/vim-bundler'
 "Plugin 'tpope/vim-commentary'
@@ -36,43 +53,16 @@ Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'craigemery/vim-autotag'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
-
-" Da Colourz
-"Plugin 'AlessandroYorba/Sierra'
-Plugin 'trevordmiller/nova-vim'
-"
-" Snipmate
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'tomtom/tlib_vim'
 "Plugin 'garbas/vim-snipmate'
 "Plugin 'honza/vim-snippets'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mxw/vim-jsx'
 "Plugin 'HerringtonDarkholme/yats.vim'
 "Plugin 'rking/ag.vim'
-
-" Nice status bar
-Plugin 'bling/vim-airline'
-
-Plugin 'roman/golden-ratio'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-
-" Tmux
-Plugin 'pivotal/tmux-config'
-
-"Plugin 'danro/rename.vim'
 "Plugin 'yssl/QFEnter'
-Plugin 'elzr/vim-json'
-"Plugin 'sjl/vitality.vim'
 "Plugin 'Chiel92/vim-autoformat'
-Plugin 'ntpeters/vim-better-whitespace'
+"Plugin 'sjl/vitality.vim'
 "Plugin 'mustache/vim-mustache-handlebars'
-
-" Added by Dan
-" =========================================
 "Plugin 'tpope/vim-fireplace'
 "Plugin 'tpope/vim-classpath'
 "Plugin 'paredit.vim'
@@ -82,7 +72,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 "Plugin 'rust-lang/rust.vim'
 "Plugin 'cespare/vim-toml'
 "Plugin 'digitaltoad/vim-pug'
-Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype on

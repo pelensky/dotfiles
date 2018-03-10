@@ -10,14 +10,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mxw/vim-jsx'
-Plugin 'elzr/vim-json'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'w0rp/ale'
 Plugin 'roman/golden-ratio'
@@ -25,6 +18,17 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'pivotal/tmux-config'
+
+" Language Specific
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+Plugin 'rhysd/vim-crystal'
+Plugin 'pearofducks/ansible-vim'
 
 " Da Colourz
 Plugin 'trevordmiller/nova-vim'

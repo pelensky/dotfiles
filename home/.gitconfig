@@ -7,6 +7,7 @@
 	excludesfile = /Users/dan/.gitignore_global
     editor = vim
 	autocrlf = input
+  safecrlf = false
     ;editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 [color]
   [color]

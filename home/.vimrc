@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+source /usr/local/opt/fzf/plugin/fzf.vim
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -89,26 +91,6 @@ nnoremap <right> <Nop>
 set splitbelow
 set splitright
 
-" CtrlP auto cache clearing.
-function! SetupCtrlP()
-  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
-    augroup CtrlPExtension
-      autocmd!
-      autocmd FocusGained  * CtrlPClearCache
-      autocmd BufWritePost * CtrlPClearCache
-    augroup END
-  endif
-endfunction
-if has("autocmd")
-  autocmd VimEnter * :call SetupCtrlP()
-endif
-
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.yardoc\|node_modules\|\ios\|\android\|log\|tmp$',
-      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-      \ }
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
@@ -142,3 +124,28 @@ let g:jsx_ext_required = 0
 
 set statusline+=%#warningmsg#
 set statusline+=%*
+
+" only check lint on save
+let g:ale_lint_on_text_changed = 'never'
+
+map <c-p> :execute 'FZF'<CR>
+map <leader>g :execute 'GFiles?'<CR>
+map :W :w
+map :Q :q
+map :WQ :wq
+map :Wq :wq
+
+command! -bang -nargs=1 Search
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '. shellescape(expand('<args>')), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+nmap <silent> <Leader>s :execute 'Find'<CR>
+command! -bang -nargs=* Find
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '. shellescape(expand('<cword>')), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)

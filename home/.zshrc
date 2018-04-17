@@ -1,5 +1,7 @@
 ZSH_THEME="af-magic"
 DISABLE_UPDATE_PROMPT=true
+export RIPGREP_CONFIG_PATH=~/.ripgreprc
+export FZF_DEFAULT_COMMAND="rg --files"
 
 alias rake="noglob rake"
 
@@ -74,3 +76,5 @@ eval $(thefuck --alias)
 [ -f /Users/dan/.travis/travis.sh ] && source /Users/dan/.travis/travis.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
  alias tmux="TERM=screen-256color-bce tmux"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

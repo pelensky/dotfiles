@@ -10,7 +10,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'w0rp/ale'
 Plugin 'roman/golden-ratio'
@@ -32,6 +31,9 @@ Plugin 'pearofducks/ansible-vim'
 
 " Da Colourz
 Plugin 'trevordmiller/nova-vim'
+
+" FZF
+Plugin 'junegunn/fzf.vim'
 
 
 "Plugin 'junegunn/vim-easy-align'

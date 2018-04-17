@@ -8,6 +8,7 @@
     editor = vim
 	autocrlf = input
   safecrlf = false
+  pager  = less -RFX
     ;editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 [color]
   [color]
@@ -78,6 +79,7 @@
   st = status
   up = !git fetch origin && git rebase origin/master
   push-ci = !sh -c '
+  conflicts = diff --name-only --diff-filter=U
 
   # These all from https://gist.github.com/robmiller/6018582
   #

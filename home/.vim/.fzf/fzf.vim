@@ -1,0 +1,1 @@
+/Users/dan/.homesick/repos/usr/local/opt/fzf/plugin/fzf.vim

@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-source /usr/local/opt/fzf/plugin/fzf.vim
+source ~/.homesick/repos/home-files/home/.vim/.fzf/fzf.vim
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim

@@ -1,17 +1,17 @@
 [user]
-	name = Dan Pelensky
-	email = dan.pelensky@ladbrokescoral.com
+  name = Dan Pelensky
+  email = dan.pelensky@ladbrokescoral.com
 [push]
-    default = simple
+  default = simple
 [core]
-	excludesfile = /Users/dan/.gitignore_global
-    editor = vim
-	autocrlf = input
+  excludesfile = /Users/dan/.gitignore_global
+  editor = vim
+  autocrlf = input
   safecrlf = false
   pager  = less -RFX
     ;editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 [color]
-  [color]
+[color]
   pager = true
   ui = auto
   status = auto
@@ -80,6 +80,8 @@
   up = !git fetch origin && git rebase origin/master
   push-ci = !sh -c '
   conflicts = diff --name-only --diff-filter=U
+  l   = !git ll -20
+  ll  = log --pretty='format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar' --date=short
 
   # These all from https://gist.github.com/robmiller/6018582
   #
@@ -148,4 +150,4 @@
 [fetch]
   prune = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain

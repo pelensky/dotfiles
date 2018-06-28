@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'pivotal/tmux-config'
+Plugin 'vim-scripts/tComment'
 
 " Language Specific
 Plugin 'vim-ruby/vim-ruby'

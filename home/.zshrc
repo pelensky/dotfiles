@@ -3,6 +3,16 @@ DISABLE_UPDATE_PROMPT=true
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export FZF_DEFAULT_COMMAND="rg --files"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# jenv
+export JENV_ROOT=/usr/local/opt/jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
 alias rake="noglob rake"
 
 alias serve="jekyll serve"
@@ -78,3 +88,4 @@ eval $(thefuck --alias)
  alias tmux="TERM=screen-256color-bce tmux"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

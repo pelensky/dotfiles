@@ -152,3 +152,10 @@ command! -bang -nargs=* Find
 
 " tComment
 map <c-c> <c-_><c-_>
+
+" pymode
+let g:pymode_python = 'python3'
+
+if has('python3')
+  silent! python3 1
+endif

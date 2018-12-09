@@ -1,6 +1,6 @@
-# Home dotfiles
+# Dotfiles
 
-This contains all my home file configurations (in particular my vim setup) so that I can share it across computers. Before you go diving in, please be aware that there are a few pre-requisites:
+This contains all my dotfille configurations (in particular my vim setup) so that I can share it across computers. Before you go diving in, please be aware that there are a few pre-requisites:
 
 ### Essential Pre-installations:
 
@@ -42,15 +42,15 @@ Now commit and push back up to your remote fork. At this point, I would advise y
 
 Next, use the homesick command to clone this repository:
 
-    homesick clone git://github.com/pelensky/home-files.git
+    homesick clone git://github.com/pelensky/dotfiles.git
 
 you can now link its contents into your home dir:
 
-    homesick symlink home-files
+    homesick symlink dotfilles
 
 run the rc file to get vundler installed:
 
-    homesick rc home-files
+    homesick rc dotfilels
 
 and restart your terminal.
 
@@ -58,10 +58,10 @@ and restart your terminal.
 
 To commit your changes:
 
-    homesick commit home-files
+    homesick commit dotfiels
 
 To push:
 
-    homesick push home-files
+    homesick push dotfiles
 
 You can now use the `hup` command to update your home files and install your vim bundles automatically.

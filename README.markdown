@@ -46,11 +46,11 @@ Next, use the homesick command to clone this repository:
 
 you can now link its contents into your home dir:
 
-    homesick symlink dotfilles
+    homesick symlink dotfiles
 
 run the rc file to get vundler installed:
 
-    homesick rc dotfilels
+    homesick rc dotfiles
 
 and restart your terminal.
 
@@ -58,7 +58,7 @@ and restart your terminal.
 
 To commit your changes:
 
-    homesick commit dotfiels
+    homesick commit dotfiles
 
 To push:
 

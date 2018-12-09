@@ -22,6 +22,7 @@ Plugin 'vim-scripts/tComment'
 " Language Specific
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-endwise'
 Plugin 'paredit.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'rust-lang/rust.vim'

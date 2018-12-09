@@ -125,9 +125,6 @@ let g:jsx_ext_required = 0
 set statusline+=%#warningmsg#
 set statusline+=%*
 
-" only check lint on save
-let g:ale_lint_on_text_changed = 'never'
-
 map <c-p> :execute 'FZF'<CR>
 map <leader>g :execute 'GFiles?'<CR>
 map :W :w

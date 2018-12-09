@@ -26,12 +26,12 @@ alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES && kill
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx tmux github fasd history-substring-search zsh-syntax-highlighting zsh-autosuggestions nyan)
+plugins=(git osx tmux github fasd history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/dan/.rvm/gems/ruby-2.3.1/bin:/Users/dan/.rvm/gems/ruby-2.3.1@global/bin:/Users/dan/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dan/.rvm/bin"
+export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/dan/.rvm/gems/ruby-2.3.1/bin:/Users/dan/.rvm/gems/ruby-2.3.1@global/bin:/Users/dan/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dan/.rvm/bin:/Users/dan/.local/bin"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -60,12 +60,6 @@ mcd() { # creates a directory and places you in it
 }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-#Junit
-export JUNIT_HOME="$HOME/java"
-export PATH="$PATH:$JUNIT_HOME"
-export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
-
 
 # Config for 'z': http://jilles.me/badassify-your-terminal-and-shell/
 . `brew --prefix`/etc/profile.d/z.sh

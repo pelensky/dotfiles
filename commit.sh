@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 git pull
-homesick symlink home-files
+homesick symlink dotfiles
 vim +PluginInstall +qall
 cd .
 git add -A .

@@ -1,10 +1,7 @@
 alias ll='ls -al'
-alias cdh='cd ~/.homesick/repos/home-files/home'
-alias hup='cdh && sh ~/.homesick/repos/home-files/commit.sh && source ~/.zshrc && cd - && clear'
+alias cdh='cd ~/.homesick/repos/dotfiles/home'
+alias hup='cdh && sh ~/.homesick/repos/dotfiles/commit.sh && source ~/.zshrc && cd - && clear'
 alias ls='ls -Ga'
-alias blender='/Applications/blender.app/Contents/MacOS/blender'
-alias cdy='cd ~/Sites/yoga && git status'
-alias gh='git log --oneline --graph --decorate --all'
 alias greps='ps aux | grep'
 alias git_prune='git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git
 branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d'
@@ -13,14 +10,7 @@ alias vi='vim'
 alias git_branch_clean='git branch --merged master | grep -v "\* master" | xargs
 -n 1 git branch -d'
 ags () { ag -l "$1" | xargs perl -pi -e "s/$1/$2/g" }
-alias flounce='echo "I can'\''t work under these conditions" | lolcat; sleep 1; exit'
-alias wow='rspec -fd | lolcat'
-alias bundlol='bundle | lolcat'
-alias hissy_fit='echo "I can'\''t work under these conditions" | lolcat; sleep 1;sudo shutdown -h now'
 alias j=z
-alias rubys='ruby -rwebrick -e"WEBrick::HTTPServer.new(:Port => 8000,
-:DocumentRoot => Dir.pwd).start"'
-alias sicp='racket -i -p neil/sicp -l xrepl'
 rake() { if [ -f bin/rake ]; then bin/rake "$@"; else bundle exec rake "$@"; fi }
 rails() { if [ -f bin/rails ]; then bin/rails "$@"; else bundle exec rails "$@"; fi }
 

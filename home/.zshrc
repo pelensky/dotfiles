@@ -3,6 +3,9 @@ DISABLE_UPDATE_PROMPT=true
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export FZF_DEFAULT_COMMAND="rg --files"
 
+# tmuxinator
+source ~/.homesick/repos/dotfiles/home/.tmuxinator/.tmuxinator.zsh
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -82,4 +85,3 @@ eval $(thefuck --alias)
  alias tmux="TERM=screen-256color-bce tmux"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-

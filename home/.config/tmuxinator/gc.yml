@@ -1,0 +1,31 @@
+# /Users/dan/.config/tmuxinator/gc.yml
+
+name: gc
+root: ~/gc/vm/
+
+on_project_start: vagrant up;
+
+windows:
+  - dashboard:
+      layout: 9533,212x50,0,0{106x50,0,0,6,105x50,107,0[105x5,107,0,7,105x7,107,6,8,105x15,107,14,9,105x20,107,30,10]}
+      panes:
+        - server:
+          - vagrant ssh gc
+          - workon virt
+          - make run
+        - kong:
+          - vagrant ssh kong
+          - sudo kong start
+        - redis:
+          - vagrant ssh gc
+          - workon virt
+          - redis-server
+        - celery:
+          - vagrant ssh gc
+          - workon virt
+          - celery worker -A globalcitizen
+        - webpack:
+          - cd src/Global-Citizen-2.0
+          - npm run watch
+  - code:
+    - cd src/Global-Citizen-2.0

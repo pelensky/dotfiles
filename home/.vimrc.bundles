@@ -34,6 +34,7 @@ Plugin 'elzr/vim-json'
 Plugin 'rhysd/vim-crystal'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'python-mode/python-mode'
+Plugin 'ElmCast/elm-vim'
 
 " Da Colourz
 Plugin 'trevordmiller/nova-vim'

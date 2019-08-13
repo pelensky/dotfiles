@@ -1,7 +1,7 @@
 # /Users/dan/.config/tmuxinator/gc.yml
 
 name: gc
-root: ~/gc/vm/
+root: ~/gc/
 
 on_project_start: vagrant up;
 

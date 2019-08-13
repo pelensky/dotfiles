@@ -1,3 +1,4 @@
+ZSH_DISABLE_COMPFIX=true
 ZSH_THEME="af-magic"
 DISABLE_UPDATE_PROMPT=true
 export RIPGREP_CONFIG_PATH=~/.ripgreprc

@@ -8,21 +8,9 @@ This contains all my dotfille configurations (in particular my vim setup) so tha
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-##### Tmux
+##### Homebrew Requirements
 ```bash
-brew install tmux
-```
-##### z
-```bash
-brew install z
-```
-##### Git (via homebrew)
-```bash
-brew install git
-```
-##### Vim (via homebrew)
-```bash
-brew install vim
+brew install tmux z git vim ripgrep fzf
 ```
 
 ##### Tmuxinator
@@ -49,6 +37,8 @@ Now commit and push back up to your remote fork. At this point, I would advise y
 Next, use the homesick command to clone this repository:
 
     homesick clone git://github.com/pelensky/dotfiles.git
+
+It will ask if you want to evaluate - at this stage you do not! 
 
 you can now link its contents into your home dir:
 

@@ -15,4 +15,4 @@ windows:
           - bundle exec foreman start
         - console:
           - bin/rails c
-  - code: vim
+  - code:

@@ -7,19 +7,11 @@ export FZF_DEFAULT_COMMAND="rg --files"
 # tmuxinator
 source ~/.homesick/repos/dotfiles/home/.tmuxinator/.tmuxinator.zsh
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # jenv
 export JENV_ROOT=/usr/local/opt/jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 alias rake="noglob rake"
-
-alias serve="jekyll serve"
 
 alias record="asciinema rec"
 
@@ -30,7 +22,7 @@ alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES && kill
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx tmux github fasd history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git osx tmux github fasd history-substring-search)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -73,12 +65,8 @@ alias s="~/chat.txt << "
 alias rubes="ruby -run -ehttpd . -p8000"
 alias roigrok="ngrok -subdomain=roi 8000"
 
-source $(brew --prefix)/share/antigen/antigen.zsh
-
 export NVM_DIR="/Users/dan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-eval $(thefuck --alias)
 
 # added by travis gem
 [ -f /Users/dan/.travis/travis.sh ] && source /Users/dan/.travis/travis.sh
@@ -86,3 +74,7 @@ eval $(thefuck --alias)
  alias tmux="TERM=screen-256color-bce tmux"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export LOCO2_USER=danp
+export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"

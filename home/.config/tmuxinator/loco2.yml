@@ -1,0 +1,18 @@
+# /Users/pelensky/.config/tmuxinator/loco2.yml
+
+name: loco2
+root: ~/Work/loco2/
+
+windows:
+  - dashboard:
+      layout: 8923,167x42,0,0{83x42,0,0,0,83x42,84,0[83x10,84,0,4,83x15,84,11,6,83x15,84,27,5]}
+      panes:
+        - server:
+          - bin/rails s -p 3000
+        - redis:
+          - redis-server
+        - workers:
+          - bundle exec foreman start
+        - console:
+          - bin/rails c
+  - code: vim

@@ -5,14 +5,12 @@ root: ~/Work/loco2/
 
 windows:
   - dashboard:
-      layout: 8923,167x42,0,0{83x42,0,0,0,83x42,84,0[83x10,84,0,4,83x15,84,11,6,83x15,84,27,5]}
+      layout: ade6,167x42,0,0{83x42,0,0,0,83x42,84,0[83x5,84,0,2,83x36,84,6,3]}
       panes:
         - server:
           - bin/rails s -p 3000
         - redis:
           - redis-server
         - workers:
-          - bundle exec foreman start
-        - console:
-          - bin/rails c
+          - bundle exec sidekiq -C config/sidekiq.yml
   - code:

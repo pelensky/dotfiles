@@ -1,5 +1,5 @@
 ZSH_DISABLE_COMPFIX=true
-ZSH_THEME="af-magic"
+ZSH_THEME="agnoster"
 DISABLE_UPDATE_PROMPT=true
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export FZF_DEFAULT_COMMAND="rg --files"
@@ -77,4 +77,10 @@ export NVM_DIR="/Users/dan/.nvm"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export LOCO2_USER=danp
-export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
+
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}

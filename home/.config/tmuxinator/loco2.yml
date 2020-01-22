@@ -5,10 +5,12 @@ root: ~/Work/loco2/
 
 windows:
   - dashboard:
-      layout: ade6,167x42,0,0{83x42,0,0,0,83x42,84,0[83x5,84,0,2,83x36,84,6,3]}
+      layout: eeeb,167x42,0,0{83x42,0,0,0,83x42,84,0[83x6,84,0,2,83x4,84,7,3,83x30,84,12,6]}
       panes:
         - server:
           - bin/rails s -p 3000
+        - webpack:
+          - bin/webpack-dev-server
         - redis:
           - redis-server
         - workers:

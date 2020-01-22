@@ -8,6 +8,13 @@ unless Dir.exists?(vundle_directory)
     `git clone https://github.com/gmarik/Vundle.vim.git #{vundle_directory}`
 end
 
+puts "Installing fonts for zsh"
+`git clone https://github.com/powerline/fonts.git --depth=1`
+`cd fonts`
+`./install.sh`
+`cd ..`
+`rm -rf fonts`
+
 puts "Setting up zsh"
 `sh install_zsh.sh`
 puts "Done!"

@@ -132,6 +132,11 @@ map :Q :q
 map :WQ :wq
 map :Wq :wq
 
+" Add the pry debug line with \bp (or <Space>bp, if you did: map <Space> <Leader> )
+map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
+" Alias for one-handed operation:
+map <Leader><Leader>p <Leader>bp
+
 command! -bang -nargs=1 Search
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always '. shellescape(expand('<args>')), 1,

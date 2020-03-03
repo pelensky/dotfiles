@@ -15,4 +15,5 @@ windows:
           - redis-server
         - workers:
           - bundle exec sidekiq -C config/sidekiq.yml
-  - code:
+  - rails:
+  - bahn: cd gems/bahn

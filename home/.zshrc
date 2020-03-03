@@ -21,6 +21,8 @@ alias tree="tree -I '.git|node_modules|bower_components'"
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
 
+alias kill3000="fuser -k -n tcp 3000"
+
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx tmux github fasd history-substring-search)
 
@@ -84,3 +86,6 @@ prompt_context() {
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+# added by travis gem
+[ -f /Users/pelensky/.travis/travis.sh ] && source /Users/pelensky/.travis/travis.sh

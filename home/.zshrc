@@ -40,12 +40,16 @@ export EDITOR="/usr/local/bin/vim"
 # sets emacs keybinding - allows Cp and Cn in terminal
 bindkey -e
 
-alias cdh='cd ~/.homesick/repos/home-files/home'
-alias hup='cdh && sh ~/.homesick/repos/home-files/commit.sh && source ~/.zshrc && cd - && clear'
+alias cdh='cd ~/.homesick/repos/dotfiles/home/'
+alias hup='cdh && sh ~/.homesick/repos/dotfiles/commit.sh && source ~/.zshrc && cd - && clear'
 
 #############
 # FUNCTIONS
 #############
+
+function open_changed() {
+  vim -O $(git status -s | awk '{print $2}')
+}
 
 function mygr8() {
   bin/rake db:migrate

@@ -16,3 +16,6 @@ Dir['./lib/*.rb'].each { |f| require f }
 Pry::Commands.command /^$/ , 'repeat last command' do
   pry_instance.run_command Pry.history.to_a.last
 end
+
+require 'awesome_print'
+AwesomePrint.pry!

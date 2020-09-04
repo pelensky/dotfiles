@@ -28,3 +28,6 @@ puts "Installing Tmux Plugin Manager"
 
 puts "Installing tmuxinator"
 `gem install tmuxinator`
+
+puts "Installing awesome print"
+`gem install awesome_print`

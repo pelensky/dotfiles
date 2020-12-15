@@ -1,0 +1,8 @@
+# /Users/pelensky/.config/tmuxinator/re.yml
+name: re
+root: ~/Work/loco2/
+
+windows:
+  - dashboard: foreman start
+  - rails:
+  - bahn: cd gems/bahn

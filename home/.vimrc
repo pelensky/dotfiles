@@ -24,6 +24,7 @@ set laststatus=2
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set cmdheight=2
 
 " Numbers
 set number

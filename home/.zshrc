@@ -7,10 +7,6 @@ export FZF_DEFAULT_COMMAND="rg --files"
 # tmuxinator
 source ~/.homesick/repos/dotfiles/home/.tmuxinator/.tmuxinator.zsh
 
-# jenv
-export JENV_ROOT=/usr/local/opt/jenv
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
 alias rake="noglob rake"
 
 alias record="asciinema rec"
@@ -28,13 +24,12 @@ plugins=(git osx tmux github fasd history-substring-search)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:$PATH"
 
 export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/dan/.rvm/gems/ruby-2.3.1/bin:/Users/dan/.rvm/gems/ruby-2.3.1@global/bin:/Users/dan/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dan/.rvm/bin:/Users/dan/.local/bin"
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' -c 'nnoremap i <nop>' -"
-
 export EDITOR="/usr/local/bin/vim"
 
 # sets emacs keybinding - allows Cp and Cn in terminal
@@ -93,3 +88,6 @@ prompt_context() {
 
 # added by travis gem
 [ -f /Users/pelensky/.travis/travis.sh ] && source /Users/pelensky/.travis/travis.sh
+export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
+
+eval "$(direnv hook zsh)"

@@ -28,7 +28,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:$PATH"
 
-export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/dan/.rvm/gems/ruby-2.3.1/bin:/Users/dan/.rvm/gems/ruby-2.3.1@global/bin:/Users/dan/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/dan/.rvm/bin:/Users/dan/.local/bin"
+export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/pelensky/.rvm/gems/ruby-2.3.1/bin:/Users/pelensky/.rvm/gems/ruby-2.3.1@global/bin:/Users/pelensky/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/pelensky/.rvm/bin:/Users/pelensky/.local/bin"
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' -c 'nnoremap i <nop>' -"
 export EDITOR="/usr/local/bin/vim"
 
@@ -44,6 +44,10 @@ alias hup='cdh && sh ~/.homesick/repos/dotfiles/commit.sh && source ~/.zshrc && 
 
 function open_changed() {
   vim -O $(git status -s | awk '{print $2}')
+}
+
+function cherry_pick_branch() {
+  BRANCH=$1; git cherry-pick $(git merge-base master ${BRANCH})..${BRANCH}
 }
 
 function mygr8() {
@@ -66,12 +70,8 @@ alias s="~/chat.txt << "
 alias rubes="ruby -run -ehttpd . -p8000"
 alias roigrok="ngrok -subdomain=roi 8000"
 
-export NVM_DIR="/Users/dan/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # added by travis gem
-[ -f /Users/dan/.travis/travis.sh ] && source /Users/dan/.travis/travis.sh
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f /Users/pelensky/.travis/travis.sh ] && source /Users/pelensky/.travis/travis.sh
  alias tmux="TERM=screen-256color-bce tmux"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

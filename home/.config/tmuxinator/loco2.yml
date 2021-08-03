@@ -17,3 +17,4 @@ windows:
           - bundle exec sidekiq -C config/sidekiq.yml
   - rails:
   - bahn: cd gems/bahn
+  - mobile: cd ../mobile

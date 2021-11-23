@@ -5,7 +5,7 @@ root: ~/Work/loco2/
 
 windows:
   - dashboard:
-      layout: eeeb,167x42,0,0{83x42,0,0,0,83x42,84,0[83x6,84,0,2,83x4,84,7,3,83x30,84,12,6]}
+      layout: 5197,156x38,0,0{80x38,0,0,0,75x38,81,0[75x12,81,0,4,75x6,81,13,5,75x18,81,20,6]}
       panes:
         - server:
           - bin/rails s -p 3000

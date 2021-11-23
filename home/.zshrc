@@ -91,3 +91,17 @@ prompt_context() {
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
 eval "$(direnv hook zsh)"
+export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"
+
+# rbenv
+eval "$(rbenv init - zsh)"
+
+# ffi - to fix 2.7.1 issues
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
+
+# Chromium - to fix M1 yarn issues with puppeteer
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+export PATH="/opt/homebrew/opt/terraform@0.12/bin:$PATH"

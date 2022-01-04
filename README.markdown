@@ -13,16 +13,11 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 brew install tmux z git vim ripgrep fzf
 ```
 
-##### Tmuxinator
-```bash
-gem install tmuxinator
-```
 
 
 In the cases of Oh My ZSH, Tmux and z, you will get annoying errors if you don't have these programs installed as my config files expect them to be there. If you don't want all the extra chuff and are just after my sexy Vim setup, go ahead and grab the `.vimrc` and `.vimrc.bundle` files, install Vundler, run `:PluginInstall` and away you go!
 
 We are also installing Git and Vim via homebrew because it makes it easier to upgrade both, and also my path (which you will be copying via the `.zshrc` file will be looking for the homebrew installations first.
-
 
 This repo is designed to work with [homesick](https://github.com/technicalpickles/homesick) which handles all my symlinking for me automatically. Much of the configuration is inspired by [Thoughtbot's dotfiles](https://github.com/thoughtbot/dotfiles).
 
@@ -49,6 +44,12 @@ run the rc file to get vundler installed:
     homesick rc dotfiles
 
 and restart your terminal.
+
+##### Tmuxinator
+```bash
+gem install tmuxinator
+```
+
 
 ##### When making changes
 

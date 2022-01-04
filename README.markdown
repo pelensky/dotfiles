@@ -10,7 +10,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ```
 ##### Homebrew Requirements
 ```bash
-brew install tmux z git vim ripgrep fzf
+brew install tmux z git vim ripgrep fzf direnv
 ```
 
 

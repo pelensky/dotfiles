@@ -13,8 +13,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 brew install tmux z git vim ripgrep fzf direnv
 ```
 
-
-
 In the cases of Oh My ZSH, Tmux and z, you will get annoying errors if you don't have these programs installed as my config files expect them to be there. If you don't want all the extra chuff and are just after my sexy Vim setup, go ahead and grab the `.vimrc` and `.vimrc.bundle` files, install Vundler, run `:PluginInstall` and away you go!
 
 We are also installing Git and Vim via homebrew because it makes it easier to upgrade both, and also my path (which you will be copying via the `.zshrc` file will be looking for the homebrew installations first.
@@ -50,6 +48,9 @@ and restart your terminal.
 gem install tmuxinator
 ```
 
+#### iTerm Settings
+Open iTerm Preferences -> Profiles -> Other Actions -> Import JSON Profiles ->
+navigate to `.homesick/repos/dotfiles/home/` and select `iTermProfiles.json`
 
 ##### When making changes
 

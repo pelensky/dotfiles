@@ -105,3 +105,17 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 export PATH="/opt/homebrew/opt/terraform@0.12/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export THOR_MERGE="code -d $1 $2"
+
+# Android Paste
+alias ap="pbpaste | xargs adb shell input text"
+
+# ripgrep
+alias rgf='rg --files | rg'
+export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"
+
+# neovim
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"

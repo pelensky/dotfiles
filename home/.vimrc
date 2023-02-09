@@ -50,6 +50,7 @@ map , \
 let mapleader = ","
 
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 "map <leader>r :!rspec <CR>
 
 :set autoread

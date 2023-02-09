@@ -10,7 +10,7 @@ windows:
         - server:
           - bin/rails s -p 3000
         - webpack:
-          - bin/webpack-dev-server
+          - yarn run webpack:development
         - redis:
           - redis-server
         - workers:

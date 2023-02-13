@@ -1,4 +1,9 @@
 set runtimepath^=/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
-exists('g:vscode')
+
+if exists('g:vscode')
+    " VSCode extension
+else
+    " ordinary Neovim
+endif

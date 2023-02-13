@@ -1,0 +1,77 @@
+{
+  "vim.useSystemClipboard": true,
+  "window.zoomLevel": 0,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "",
+  "vscode-neovim.neovimExecutablePaths.win32": "",
+  "vscode-neovim.logOutputToConsole": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "editor.fontSize": 16,
+  "markdown.preview.fontSize": 16,
+  "debug.console.fontSize": 16,
+  "pgsql.resultsFontSize": 16,
+  "workbench.colorTheme": "Nova",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.panel.opensMaximized": "always",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.profiles.osx": { "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] } },
+  "terminal.integrated.shell.osx": "/Users/pelensky/.config/vscode/shell"
+}

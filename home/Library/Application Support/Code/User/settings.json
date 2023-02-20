@@ -73,5 +73,7 @@
   "workbench.panel.opensMaximized": "always",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.profiles.osx": { "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] } },
-  "terminal.integrated.shell.osx": "/Users/pelensky/.config/vscode/shell"
+  "terminal.integrated.shell.osx": "/Users/pelensky/.config/vscode/shell",
+  "terminal.integrated.fontFamily": "'Meslo LG S for Powerline'",
+  "workbench.editor.enablePreview": false
 }

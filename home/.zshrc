@@ -20,13 +20,16 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killa
 alias kill3000="fuser -k -n tcp 3000"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git macos tmux github fasd history-substring-search)
+plugins=(git tmux github fasd history-substring-search)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:$PATH"
+
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/pelensky/.rvm/gems/ruby-2.3.1/bin:/Users/pelensky/.rvm/gems/ruby-2.3.1@global/bin:/Users/pelensky/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/pelensky/.rvm/bin:/Users/pelensky/.local/bin"
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' -c 'nnoremap i <nop>' -"
@@ -47,7 +50,8 @@ function open_changed() {
 }
 
 function cherry_pick_branch() {
-  BRANCH=$1; git cherry-pick $(git merge-base master ${BRANCH})..${BRANCH}
+  BRANCH=${1}
+  git cherry-pick $(git log --reverse --pretty=format:'%H' master..${BRANCH})
 }
 
 function mygr8() {
@@ -77,8 +81,11 @@ alias roigrok="ngrok -subdomain=roi 8000"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
 export LOCO2_USER=danp
-export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
+
+export PATH="/usr/local/opt/postgresql@14/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
 
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -91,7 +98,6 @@ prompt_context() {
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
 eval "$(direnv hook zsh)"
-export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"
 
 # rbenv
 eval "$(rbenv init - zsh)"
@@ -113,9 +119,13 @@ alias ap="pbpaste | xargs adb shell input text"
 
 # ripgrep
 alias rgf='rg --files | rg'
-export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"
 
 # neovim
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+
+# python
+alias python="python3"
+alias pip="pip3"
+

@@ -52,5 +52,239 @@
     "key": "ctrl+k",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
+  },
+  // Escape
+  {
+    "key": "ctrl+[",
+    "command": "search.action.cancel",
+    "when": "listFocus && searchViewletVisible && !inputFocus && searchState != '0'"
+  },
+  {
+    "key": "escape",
+    "command": "-search.action.cancel",
+    "when": "listFocus && searchViewletVisible && !inputFocus && searchState != '0'"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.statusBar.clearFocus",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "escape",
+    "command": "-workbench.statusBar.clearFocus",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.hideInterfaceOverview",
+    "when": "interfaceOverviewVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-workbench.action.hideInterfaceOverview",
+    "when": "interfaceOverviewVisible"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "settings.action.clearSearchResults",
+    "when": "inSettingsEditor && inSettingsSearch"
+  },
+  {
+    "key": "escape",
+    "command": "-settings.action.clearSearchResults",
+    "when": "inSettingsEditor && inSettingsSearch"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+  {
+    "key": "shift+escape",
+    "command": "-closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "closeReplaceInFilesWidget",
+    "when": "replaceInputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-closeReplaceInFilesWidget",
+    "when": "replaceInputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.closeCallHierarchy",
+    "when": "callHierarchyVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.closeCallHierarchy",
+    "when": "callHierarchyVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.closeTypeHierarchy",
+    "when": "typeHierarchyVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.closeTypeHierarchy",
+    "when": "typeHierarchyVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.cancelOperation",
+    "when": "cancellableOperation"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.cancelOperation",
+    "when": "cancellableOperation"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.closeTestPeek",
+    "when": "testing.isInPeek && !config.editor.stablePeek || testing.isPeekVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.closeTestPeek",
+    "when": "testing.isInPeek && !config.editor.stablePeek || testing.isPeekVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.gotoNextSymbolFromResult.cancel",
+    "when": "hasSymbols"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.gotoNextSymbolFromResult.cancel",
+    "when": "hasSymbols"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "gitlens.key.escape",
+    "when": "editorTextFocus && gitlens:key:escape && !findWidgetVisible && !isInEmbeddedEditor && !renameInputVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-gitlens.key.escape",
+    "when": "editorTextFocus && gitlens:key:escape && !findWidgetVisible && !isInEmbeddedEditor && !renameInputVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "hideCodeActionWidget",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-hideCodeActionWidget",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "hideSuggestWidget",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "-hideSuggestWidget",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "keybindings.editor.rejectWhenExpression",
+    "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-keybindings.editor.rejectWhenExpression",
+    "when": "inKeybindings && whenFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "leaveSnippet",
+    "when": "editorTextFocus && inSnippetMode"
+  },
+  {
+    "key": "escape",
+    "command": "-leaveSnippet",
+    "when": "editorTextFocus && inSnippetMode"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "list.clear",
+    "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "-list.clear",
+    "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "list.closeFind",
+    "when": "listFocus && treeFindOpen"
+  },
+  {
+    "key": "escape",
+    "command": "-list.closeFind",
+    "when": "listFocus && treeFindOpen"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "escape",
+    "command": "-workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.hideComment",
+    "when": "commentEditorFocused"
+  },
+  {
+    "key": "escape",
+    "command": "-workbench.action.hideComment",
+    "when": "commentEditorFocused"
+  },
+  // Command P
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode == 'visual'"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.mode == 'visual'"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.quickOpen"
   }
 ]

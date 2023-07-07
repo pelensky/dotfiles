@@ -35,6 +35,8 @@ export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/User
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' -c 'nnoremap i <nop>' -"
 export EDITOR="/usr/local/bin/vim"
 
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # sets emacs keybinding - allows Cp and Cn in terminal
 bindkey -e
 
@@ -129,3 +131,5 @@ alias oldvim="vim"
 alias python="python3"
 alias pip="pip3"
 
+# Webpack / Node
+export NODE_OPTIONS=--openssl-legacy-provider

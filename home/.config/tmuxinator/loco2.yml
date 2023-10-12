@@ -18,3 +18,10 @@ windows:
   - rails:
   - bahn: cd gems/bahn
   - mobile: cd ../mobile
+  - aws:
+      layout: e2f5,156x38,0,0[156x8,0,0,4,156x29,0,9,8]
+      panes:
+        - creds:
+          - cd ../raileurope-aws-credentials
+        - ssh:
+          - cd ../b2c-infrastructure

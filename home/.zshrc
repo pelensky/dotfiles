@@ -20,14 +20,14 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killa
 alias kill3000="fuser -k -n tcp 3000"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git tmux github fasd history-substring-search)
+plugins=(zsh-nvm git tmux github fasd history-substring-search)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.8/libexec/openjdk.jdk/Contents/Home
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
@@ -113,7 +113,7 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 export PATH="/opt/homebrew/opt/terraform@0.12/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export THOR_MERGE="code -d $1 $2"
 
 # Android Paste
@@ -130,6 +130,3 @@ alias oldvim="vim"
 # python
 alias python="python3"
 alias pip="pip3"
-
-# Webpack / Node
-export NODE_OPTIONS=--openssl-legacy-provider

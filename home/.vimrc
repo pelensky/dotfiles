@@ -166,3 +166,8 @@ endif
 
 " find corresponding divs with %
 packadd! matchit
+
+" Spell check
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+

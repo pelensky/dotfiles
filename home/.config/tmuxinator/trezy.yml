@@ -1,0 +1,7 @@
+# /Users/pelensky/.config/tmuxinator/trezy.yml
+name: trezy 🚂
+root: ~/Work/trezy/
+
+windows:
+  - server: pnpm dev
+  - editor: vim

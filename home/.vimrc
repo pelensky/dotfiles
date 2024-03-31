@@ -15,15 +15,11 @@ syntax on
 filetype plugin indent on    " required
 
 set backspace=indent,eol,start
-set tabstop=2
 set nosmartindent
 set autoindent
 set cursorline    " highlight the current line the cursor is on
 
 set laststatus=2
-set expandtab
-set shiftwidth=2
-set softtabstop=2
 set cmdheight=2
 
 " Numbers
@@ -35,6 +31,7 @@ set showmatch
 
 " Softtabs, 2 spaces
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab

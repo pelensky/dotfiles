@@ -1,3 +1,5 @@
-home/.vim/bundle/*
 !.gitkeep
 .netrwhist
+home/.vim/bundle/*
+home/.zshrc-e
+

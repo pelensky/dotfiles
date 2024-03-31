@@ -130,3 +130,8 @@ alias oldvim="vim"
 # python
 alias python="python3"
 alias pip="pip3"
+
+# volta
+export VOLTA_HOME=$HOME/.volta
+export PATH=$VOLTA_HOME/bin:$PATH
+unset _VOLTA_TOOL_RECURSION in each

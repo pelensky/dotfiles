@@ -29,5 +29,8 @@ Plugin 'iammerrick/nova-vim'
 " FZF
 Plugin 'junegunn/fzf.vim'
 
+" Codeium
+Plugin 'github/copilot.vim'
+
 call vundle#end()
 filetype on

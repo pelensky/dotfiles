@@ -1,7 +1,15 @@
 # /Users/pelensky/.config/tmuxinator/trezy.yml
 name: trezy 🚂
-root: ~/Work/trezy/
+root: ~/DevHome/trezy/
 
 windows:
-  - server: pnpm dev
-  - editor: vim
+  - dashboard:
+      layout: e2f5,156x38,0,0[156x8,0,0,4,156x29,0,9,8]
+      panes:
+        - aws creds:
+          - cd ../raileurope-aws-credentials; era_login
+        - server:
+          - pnpm dev
+  - trezy: vim
+  - tests:
+  - era: cd ../era; docker-compose -f ../docker_era.yml up -d

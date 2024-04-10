@@ -168,3 +168,8 @@ packadd! matchit
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
 
+" Svelte
+let g:vim_svelte_plugin_load_full_syntax = 1
+
+" Codeium
+nnoremap <leader>c :call codeium#Chat()<CR>

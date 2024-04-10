@@ -1,7 +1,7 @@
 # /Users/pelensky/.config/tmuxinator/loco2.yml
 
 name: loco2
-root: ~/Work/loco2/
+root: ~/DevHome/loco2/
 
 windows:
   - dashboard:

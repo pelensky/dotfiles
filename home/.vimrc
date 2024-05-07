@@ -1,16 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-source ~/.homesick/repos/dotfiles/home/.vim/.fzf/fzf.vim
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
 syntax on
 filetype plugin indent on    " required
 
@@ -29,16 +19,29 @@ set numberwidth=5
 "sm: flashes matching brackets or parentheses
 set showmatch
 
-" Softtabs, 2 spaces
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-set smarttab
+function! SetupTabsAndWhitespace()
+    let l:root = fnamemodify(expand('%'), ':p:h')
+    let l:editorconfig = findfile('.editorconfig', l:root . ';')
 
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+    if empty(l:editorconfig) || match(readfile(l:editorconfig), 'indent_style\s*=\s*tab') == -1
+        " Softtabs, 2 spaces
+        set tabstop=2
+        set softtabstop=2
+        set shiftwidth=2
+        set shiftround
+        set expandtab
+        set smarttab
+
+        " Display extra whitespace
+        set list listchars=tab:»·,trail:·,nbsp:·
+    else
+        " Use tab settings from .editorconfig
+        set noexpandtab
+        set nolist
+    endif
+endfunction
+
+autocmd BufReadPost * call SetupTabsAndWhitespace()
 
 " When scrolling off-screen do so 3 lines at a time, not 1
 set scrolloff=3
@@ -54,7 +57,6 @@ let NERDTreeShowHidden=1
 :set noswapfile
 :set background=dark
 
-:colorscheme nova
 :match Error /\s\+$/
 
 " If ycu wantc:UltiSnipsEdit to split your windowc
@@ -136,21 +138,6 @@ map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
 " Alias for one-handed operation:
 map <Leader><Leader>p <Leader>bp
 
-command! -bang -nargs=1 Search
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '. shellescape(expand('<args>')), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
-nmap <silent> <Leader>s :execute 'Find'<CR>
-command! -bang -nargs=* Find
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '. shellescape(expand('<cword>')), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
 " tComment
 map <c-c> <c-_><c-_>
 
@@ -170,6 +157,29 @@ autocmd FileType gitcommit setlocal spell
 
 " Svelte
 let g:vim_svelte_plugin_load_full_syntax = 1
+let g:svelte_preprocessor_tags = [
+  \ { 'name': 'ts', 'tag': 'script', 'as': 'typescript' }
+  \ ]
+let g:svelte_preprocessors = ['typescript']
 
 " Codeium
 nnoremap <leader>c :call codeium#Chat()<CR>
+
+" Line endings
+set fileformat=unix
+
+" Linter
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:ale_fixers = {
+  \ 'ruby': ['rubocop'],
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'typescript': ['prettier', 'tslint'],
+  \ 'css': ['prettier'],
+  \ 'scss': ['prettier', 'stylelint'],
+  \ 'html': ['prettier']
+\ }
+
+let g:ale_fix_on_save = 1
+
+

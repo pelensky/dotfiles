@@ -19,9 +19,11 @@ Plugin 'bling/vim-airline'
 Plugin 'pivotal/tmux-config'
 Plugin 'vim-scripts/tComment'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'prettier/vim-prettier'
 
 " Language Specific
 Plugin 'sheerun/vim-polyglot'
+Plugin 'evanleck/vim-svelte'
 
 " Da Colourz
 Plugin 'iammerrick/nova-vim'

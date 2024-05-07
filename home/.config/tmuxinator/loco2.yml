@@ -3,6 +3,8 @@
 name: loco2
 root: ~/DevHome/loco2/
 
+pre_window: export AWS_PROFILE=397818371326
+
 windows:
   - dashboard:
       layout: 5197,156x38,0,0{80x38,0,0,0,75x38,81,0[75x12,81,0,4,75x6,81,13,5,75x18,81,20,6]}
@@ -11,8 +13,8 @@ windows:
           - bin/rails s -p 3000
         - webpack:
           - yarn run webpack:development
-        - redis:
-          - redis-server
+        - docker:
+          - docker compose -f ../docker/docker-compose-services.yml up -d
         - workers:
           - bundle exec sidekiq -C config/sidekiq.yml
   - rails:

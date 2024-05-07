@@ -2,6 +2,8 @@
 name: trezy 🚂
 root: ~/DevHome/trezy/
 
+pre_window: export AWS_PROFILE=994145574693
+
 windows:
   - dashboard:
       layout: e2f5,156x38,0,0[156x8,0,0,4,156x29,0,9,8]
@@ -10,6 +12,6 @@ windows:
           - cd ../raileurope-aws-credentials; era_login
         - server:
           - pnpm dev
-  - trezy: vim
+  - trezy:
   - tests:
   - era: cd ../era; docker-compose -f ../docker_era.yml up -d

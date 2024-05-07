@@ -49,7 +49,7 @@ alias hup='cdh && sh ~/.homesick/repos/dotfiles/commit.sh && source ~/.zshrc && 
 #############
 
 function open_changed() {
-  vim -O $(git status -s | awk '{print $2}')
+  nvim -O $(git status -s | awk '{print $2}')
 }
 
 function cherry_pick_branch() {
@@ -137,15 +137,17 @@ export VOLTA_HOME=$HOME/.volta
 export PATH=$VOLTA_HOME/bin:$PATH
 unset _VOLTA_TOOL_RECURSION in each
 
-# ERA
+# era
 source <(ng completion script)
-export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain era-artifact --domain-owner 994145574693 --query authorizationToken --output text --profile 994145574693 --region eu-west-1)
 
 alias codeartifact='export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain era-artifact --domain-owner 994145574693 --query authorizationToken --output text --profile 994145574693 --region eu-west-1)'
 alias creds='python ~/DevHome/raileurope-aws-credentials/aws-sso-creds.py -u dpelensky'
 alias era_login='creds ; codeartifact'
 
+
 export M2_HOME=/opt/homebrew/Cellar/maven/3.9.6/libexec
 export M2=$M2_HOME/bin
 export PATH=$PATH:$M2_HOME/bin
 
+# docker
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"

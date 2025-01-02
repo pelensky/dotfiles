@@ -19,30 +19,6 @@ set numberwidth=5
 "sm: flashes matching brackets or parentheses
 set showmatch
 
-function! SetupTabsAndWhitespace()
-    let l:root = fnamemodify(expand('%'), ':p:h')
-    let l:editorconfig = findfile('.editorconfig', l:root . ';')
-
-    if empty(l:editorconfig) || match(readfile(l:editorconfig), 'indent_style\s*=\s*tab') == -1
-        " Softtabs, 2 spaces
-        set tabstop=2
-        set softtabstop=2
-        set shiftwidth=2
-        set shiftround
-        set expandtab
-        set smarttab
-
-        " Display extra whitespace
-        set list listchars=tab:»·,trail:·,nbsp:·
-    else
-        " Use tab settings from .editorconfig
-        set noexpandtab
-        set nolist
-    endif
-endfunction
-
-autocmd BufReadPost * call SetupTabsAndWhitespace()
-
 " When scrolling off-screen do so 3 lines at a time, not 1
 set scrolloff=3
 

@@ -18,7 +18,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'pivotal/tmux-config'
 Plugin 'vim-scripts/tComment'
-Plugin 'editorconfig/editorconfig-vim'
 Plugin 'prettier/vim-prettier'
 
 " Language Specific

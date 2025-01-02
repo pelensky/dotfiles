@@ -20,7 +20,7 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killa
 alias kill3000="fuser -k -n tcp 3000"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-nvm git tmux github fasd history-substring-search)
+plugins=(zsh-nvm git tmux github fasd history-substring-search zsh-vi-mode)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -87,8 +87,7 @@ export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 export LOCO2_USER=danp
 
-export PATH="/usr/local/opt/postgresql@14/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -104,6 +103,10 @@ eval "$(direnv hook zsh)"
 
 # rbenv
 eval "$(rbenv init - zsh)"
+
+
+# starship
+eval "$(starship init zsh)"
 
 # ffi - to fix 2.7.1 issues
 export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
@@ -122,15 +125,20 @@ alias ap="pbpaste | xargs adb shell input text"
 
 # ripgrep
 alias rgf='rg --files | rg'
+alias sg='rg --max-columns=150 --max-columns-preview -g "!*.js.map" -g "!spec/**" -g "!app/frontend/spa/**" -g "!app/assets/javascripts/vendor/**"'
 
 # neovim
-alias vim="nvim"
-alias vi="nvim"
+alias vim="noglob nvim"
+alias vi="noglob nvim"
 alias oldvim="vim"
 
 # python
 alias python="python3"
 alias pip="pip3"
+
+# delete files with parentheses
+alias git="noglob git"
+alias rm="noglob rm"
 
 # volta
 export VOLTA_HOME=$HOME/.volta
@@ -151,3 +159,14 @@ export PATH=$PATH:$M2_HOME/bin
 
 # docker
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
+# tmux
+alias tmux-pane="tmux display-message -p \"#{session_name}:#{window_index}.#{pane_index}\""
+
+# pnpm
+export PNPM_HOME="/Users/pelensky/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

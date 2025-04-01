@@ -20,7 +20,7 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killa
 alias kill3000="fuser -k -n tcp 3000"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-nvm git tmux github fasd history-substring-search zsh-vi-mode)
+plugins=(zsh-nvm git tmux github fasd history-substring-search)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh

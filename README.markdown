@@ -46,10 +46,6 @@ run the rc file to get vundler installed:
 
 and restart your terminal.
 
-##### Tmuxinator
-```bash
-gem install tmuxinator
-```
 
 #### iTerm Settings
 Open iTerm Preferences -> Profiles -> Other Actions -> Import JSON Profiles ->

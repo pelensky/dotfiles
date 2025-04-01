@@ -13,8 +13,7 @@ puts "Installing fonts for zsh"
 `./fonts/install.sh`
 `rm -rf fonts`
 
-puts "Installing tmux"
-`brew install tmux`
+puts "Configuring tmux"
 `brew install reattach-to-user-namespace`
 
 puts "Installing Tmux Plugin Manager"
@@ -25,3 +24,6 @@ puts "Installing tmuxinator"
 
 puts "Installing awesome print"
 `gem install awesome_print`
+
+puts "Installing nvm"
+`git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm`

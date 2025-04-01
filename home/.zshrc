@@ -32,7 +32,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/plat
 
 export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/danpelensky/.rvm/gems/ruby-2.3.1/bin:/Users/danpelensky/.rvm/gems/ruby-2.3.1@global/bin:/Users/danpelensky/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/danpelensky/.rvm/bin:/Users/danpelensky/.local/bin"
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' -c 'nnoremap i <nop>' -"
-export EDITOR="/usr/local/bin/vim"
+export EDITOR="/opt/homebrew/bin/nvim"
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 

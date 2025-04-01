@@ -24,7 +24,7 @@ This repo is designed to work with [homesick](https://github.com/technicalpickle
 
 To install, first install [homesick](https://github.com/technicalpickles/homesick):
 
-    gem install homesick
+    sudo gem install homesick
 
 Next step is to FORK this repository. Clone it to your local machine, and make sure you do a find-and-replace across the entire repo for `dan` and replace it with the name of your User folder. Then go into the .gitconfig file and make sure you change your Git username and email address to your relevant details, unless you want me taking credit for your commits :)
 

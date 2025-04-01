@@ -8,10 +8,11 @@ unless Dir.exists?(vundle_directory)
     `git clone https://github.com/gmarik/Vundle.vim.git #{vundle_directory}`
 end
 
-puts "Installing fonts for zsh"
+puts "Installing fonts and Starship for zsh"
 `git clone https://github.com/powerline/fonts.git --depth=1`
 `./fonts/install.sh`
 `rm -rf fonts`
+`brew install starship`
 
 puts "Configuring tmux"
 `brew install reattach-to-user-namespace`

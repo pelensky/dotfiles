@@ -13,10 +13,6 @@ puts "Installing fonts for zsh"
 `./fonts/install.sh`
 `rm -rf fonts`
 
-puts "Setting up zsh"
-`sh install_zsh.sh`
-puts "Done!"
-
 puts "Installing tmux"
 `brew install tmux`
 `brew install reattach-to-user-namespace`

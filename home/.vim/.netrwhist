@@ -1,5 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/leo/Code/StudentProgressTracker'
-let g:netrw_dirhist_2='/Users/leoallen/Sites/yoga/app/assets/javascripts/models'
-let g:netrw_dirhist_3='/Users/roidriscoll/development/noterrific'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/danpelensky/.homesick/repos/dotfiles'

@@ -32,7 +32,7 @@ Now commit and push back up to your remote fork. At this point, I would advise y
 
 Next, use the homesick command to clone this repository:
 
-    homesick clone git://github.com/pelensky/dotfiles.git
+    homesick clone pelensky/dotfiles
 
 It will ask if you want to evaluate - at this stage you do not! 
 

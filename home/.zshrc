@@ -71,7 +71,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Config for 'z': http://jilles.me/badassify-your-terminal-and-shell/
 . `brew --prefix`/etc/profile.d/z.sh
-source /usr/local/share/zsh/site-functions
+source /opt/homebrew/share/zsh/site-functions
 alias s="~/chat.txt << "
 
 alias rubes="ruby -run -ehttpd . -p8000"

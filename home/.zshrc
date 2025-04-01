@@ -102,25 +102,6 @@ eval "$(direnv hook zsh)"
 # rbenv
 eval "$(rbenv init - zsh)"
 
-
-# starship
-eval "$(starship init zsh)"
-
-# ffi - to fix 2.7.1 issues
-export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
-
-# Chromium - to fix M1 yarn issues with puppeteer
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-export PATH="/opt/homebrew/opt/terraform@0.12/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export THOR_MERGE="code -d $1 $2"
-
-# Android Paste
-alias ap="pbpaste | xargs adb shell input text"
-
 # ripgrep
 alias rgf='rg --files | rg'
 alias sg='rg --max-columns=150 --max-columns-preview -g "!*.js.map" -g "!spec/**" -g "!app/frontend/spa/**" -g "!app/assets/javascripts/vendor/**"'

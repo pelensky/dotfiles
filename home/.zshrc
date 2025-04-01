@@ -27,12 +27,10 @@ source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export JAVA_HOME="$(/usr/libexec/java_home -v corretto)" # ERA uses corretto
-# export JAVA_HOME="$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home"
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
-export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/pelensky/.rvm/gems/ruby-2.3.1/bin:/Users/pelensky/.rvm/gems/ruby-2.3.1@global/bin:/Users/pelensky/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/pelensky/.rvm/bin:/Users/pelensky/.local/bin"
+export PATH=$PATH:"/usr/local/bin:/usr/local/bin/git:/usr/local/heroku/bin:/Users/danpelensky/.rvm/gems/ruby-2.3.1/bin:/Users/danpelensky/.rvm/gems/ruby-2.3.1@global/bin:/Users/danpelensky/.rvm/rubies/ruby-2.3.1/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/danpelensky/.rvm/bin:/Users/danpelensky/.local/bin"
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' -c 'nnoremap i <nop>' -"
 export EDITOR="/usr/local/bin/vim"
 
@@ -78,7 +76,7 @@ alias rubes="ruby -run -ehttpd . -p8000"
 alias roigrok="ngrok -subdomain=roi 8000"
 
 # added by travis gem
-[ -f /Users/pelensky/.travis/travis.sh ] && source /Users/pelensky/.travis/travis.sh
+[ -f /Users/danpelensky/.travis/travis.sh ] && source /Users/danpelensky/.travis/travis.sh
  alias tmux="TERM=screen-256color-bce tmux"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -96,7 +94,7 @@ prompt_context() {
 }
 
 # added by travis gem
-[ -f /Users/pelensky/.travis/travis.sh ] && source /Users/pelensky/.travis/travis.sh
+[ -f /Users/danpelensky/.travis/travis.sh ] && source /Users/danpelensky/.travis/travis.sh
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
 eval "$(direnv hook zsh)"
@@ -145,18 +143,6 @@ export VOLTA_HOME=$HOME/.volta
 export PATH=$VOLTA_HOME/bin:$PATH
 unset _VOLTA_TOOL_RECURSION in each
 
-# era
-source <(ng completion script)
-
-alias codeartifact='export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain era-artifact --domain-owner 994145574693 --query authorizationToken --output text --profile 994145574693 --region eu-west-1)'
-alias creds='python ~/DevHome/raileurope-aws-credentials/aws-sso-creds.py -u dpelensky'
-alias era_login='creds ; codeartifact'
-
-
-export M2_HOME=/opt/homebrew/Cellar/maven/3.9.6/libexec
-export M2=$M2_HOME/bin
-export PATH=$PATH:$M2_HOME/bin
-
 # docker
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
@@ -164,7 +150,7 @@ export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 alias tmux-pane="tmux display-message -p \"#{session_name}:#{window_index}.#{pane_index}\""
 
 # pnpm
-export PNPM_HOME="/Users/pelensky/Library/pnpm"
+export PNPM_HOME="/Users/danpelensky/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

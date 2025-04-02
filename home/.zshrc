@@ -77,7 +77,8 @@ alias roigrok="ngrok -subdomain=roi 8000"
 
 # added by travis gem
 [ -f /Users/danpelensky/.travis/travis.sh ] && source /Users/danpelensky/.travis/travis.sh
- alias tmux="TERM=screen-256color-bce tmux"
+
+export TERM="xterm-256color"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
@@ -98,9 +99,6 @@ prompt_context() {
 export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
 eval "$(direnv hook zsh)"
-
-# rbenv
-eval "$(rbenv init - zsh)"
 
 # ripgrep
 alias rgf='rg --files | rg'

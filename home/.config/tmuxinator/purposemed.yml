@@ -1,0 +1,21 @@
+# ~/.config/tmuxinator/purposemed.yml
+name: PurposeMed
+root: ~/Work/core/
+
+pre_window: |
+  pg_ctl start || true
+
+windows:
+  - dashboard:
+      layout: even-horizontal
+      panes:
+        - cd back-end && bin/run-dev
+        - cd front-end/apps/freddie && yarn localstart:with-tunnels
+  - core:
+      panes:
+  - back-end:
+      panes:
+        - cd back-end
+  - front-end:
+      panes:
+        - cd front-end

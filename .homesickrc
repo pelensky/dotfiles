@@ -9,9 +9,7 @@ unless Dir.exists?(vundle_directory)
 end
 
 puts "Installing fonts and Starship for zsh"
-`git clone https://github.com/powerline/fonts.git --depth=1`
-`./fonts/install.sh`
-`rm -rf fonts`
+`brew install --cask font-inconsolata-go-nerd-font`
 `brew install starship`
 
 puts "Configuring tmux"

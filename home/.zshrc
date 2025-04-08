@@ -20,12 +20,13 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killa
 alias kill3000="fuser -k -n tcp 3000"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-nvm git tmux github fasd history-substring-search)
+plugins=(zsh-nvm git tmux github fasd)
 
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools

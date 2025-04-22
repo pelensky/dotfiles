@@ -2,20 +2,27 @@
 name: PurposeMed
 root: ~/Work/core/
 
-pre_window: |
-  pg_ctl start || true
-
 windows:
   - dashboard:
       layout: even-horizontal
       panes:
-        - cd back-end && bin/run-dev
-        - cd front-end/apps/freddie && yarn localstart:with-tunnels
+        - commands:
+            - pg_ctl start || true
+            - cd back-end
+            - bin/run-dev
+        - commands:
+            - cd front-end
+            - yarn workspace freddie localstart:with-tunnels
+
   - core:
       panes:
+
   - back-end:
       panes:
-        - cd back-end
+        - commands:
+            - cd back-end
+
   - front-end:
       panes:
-        - cd front-end
+        - commands:
+            - cd front-end

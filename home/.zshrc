@@ -53,7 +53,7 @@ function open_changed() {
 
 function cherry_pick_branch() {
   BRANCH=${1}
-  git cherry-pick $(git log --reverse --pretty=format:'%H' master..${BRANCH})
+  git cherry-pick $(git log --reverse --pretty=format:'%H' main..${BRANCH})
 }
 
 function mygr8() {
@@ -141,3 +141,6 @@ eval "$(starship init zsh)"
 
 #asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/danpelensky/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;

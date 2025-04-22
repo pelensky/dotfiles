@@ -35,10 +35,12 @@ require("lazy").setup({
     config = function()
       vim.g.ale_fix_on_save = 0
       vim.g.ale_lint_on_save = 1
+      vim.g.ale_use_global_executables = 0
       vim.g.ale_fixers = {
         ruby = { "rubocop" },
         javascript = { "prettier", "eslint" },
-        typescript = { "prettier", "tslint" },
+        typescript = { "prettier", "eslint" },
+        typescriptreact = { "prettier", "eslint" },
         css = { "prettier" },
         scss = { "prettier", "stylelint" },
         html = { "prettier" }

@@ -1,3 +1,5 @@
+command_timeout = 2000
+
 format = """
 [](#F2C38F)\
 $os\

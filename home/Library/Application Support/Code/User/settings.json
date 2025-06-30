@@ -76,5 +76,7 @@
   "terminal.integrated.shell.osx": "/Users/pelensky/.config/vscode/shell",
   "terminal.integrated.fontFamily": "'Meslo LG S for Powerline'",
   "workbench.editor.enablePreview": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "testExplorer.useNativeTesting": true
 }

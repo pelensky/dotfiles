@@ -4,25 +4,30 @@ root: ~/Work/core/
 
 windows:
   - dashboard:
-      layout: even-horizontal
+      layout: main-vertical
       panes:
         - commands:
-            - pg_ctl start || true
             - cd back-end
+            - pg_ctl start || true
             - bin/run-dev
         - commands:
             - cd front-end
-            - yarn workspace freddie localstart:with-tunnels
+            - yarn workspace freddie localstart
+        - commands:
+            - cd front-end
+            - yarn workspace frida localstart
+        - commands:
+            - cd front-end
+            - yarn workspace purposemed localstart
 
   - core:
+      root: .
       panes:
 
   - back-end:
+      root: back-end
       panes:
-        - commands:
-            - cd back-end
 
   - front-end:
+      root: front-end
       panes:
-        - commands:
-            - cd front-end

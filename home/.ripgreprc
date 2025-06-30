@@ -32,3 +32,6 @@
 --colors=match:bg:0x2b,0x83,0xa6
 --colors=match:fg:0xff,0xff,0xff
 --colors=match:style:nobold
+
+# Allow lookarounds
+--pcre2

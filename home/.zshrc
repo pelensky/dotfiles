@@ -51,11 +51,6 @@ function open_changed() {
   nvim -O $(git status -s | awk '{print $2}')
 }
 
-function cherry_pick_branch() {
-  BRANCH=${1}
-  git cherry-pick $(git log --reverse --pretty=format:'%H' main..${BRANCH})
-}
-
 function mygr8() {
   bin/rake db:migrate
   bin/rake db:migrate RAILS_ENV=test
@@ -65,6 +60,22 @@ mcd() { # creates a directory and places you in it
   mkdir -p $1
   cd $1
 }
+
+#############
+# HELPERS
+#############
+
+alias main='git checkout main && git pull origin main'
+
+# git checkout with fuzzy finder for branch names
+alias gco='git checkout $(git branch | fzf)'
+
+# rspec with fuzzy finder for filenames; can support multiples in tabs
+alias rspec='f() { local specs=$(find spec -name "*.rb" -type f | fzf --multi); [ -n "$specs" ] && echo "bundle exec rspec $(echo "$specs" | tr "\n" " ")" && echo "$specs" | xargs bundle exec rspec; }; f'
+
+# cherry pick all commits from this branch that aren't on main
+alias cherry_pick_branch='f() { local branch=$(command git branch | fzf); [ -n "$branch" ] && echo "Cherry-picking from main..$branch" && command git cherry-pick $(command git log --reverse --pretty=format="%H" main.."$branch"); }; f'
+
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

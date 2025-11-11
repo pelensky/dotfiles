@@ -102,7 +102,13 @@ let g:jsx_ext_required = 0
 set statusline+=%#warningmsg#
 set statusline+=%*
 
-map <c-p> :execute 'FZF'<CR>
+" FZF with all files including gitignored (non-hidden + .git/info/exclude)
+map <c-p> :call fzf#run({
+  \ 'source': 'git ls-files --cached --others --exclude-standard && find . -type f \( -path "./.git" -o -path "./node_modules" -o -path "./.DS_Store" \) -prune -o -type f -print',
+  \ 'sink': 'e',
+  \ 'options': '--multi'
+  \ })<CR>
+" Git files (tracked and untracked, respects gitignore)
 map <leader>g :execute 'GFiles?'<CR>
 map :W :w
 map :Q :q

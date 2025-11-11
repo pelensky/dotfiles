@@ -18,6 +18,7 @@ alias show_hidden="defaults write com.apple.finder AppleShowAllFiles YES && kill
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
 
 alias kill3000="fuser -k -n tcp 3000"
+alias killtest='pkill -f "vitest|rspec|parallel_test|spring" && echo "✓ Killed test processes" || echo "No test processes found"'
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(zsh-nvm git tmux github fasd)
@@ -76,6 +77,10 @@ alias rspec='f() { local specs=$(find spec -name "*.rb" -type f | fzf --multi); 
 # cherry pick all commits from this branch that aren't on main
 alias cherry_pick_branch='f() { local branch=$(command git branch | fzf); [ -n "$branch" ] && echo "Cherry-picking from main..$branch" && command git cherry-pick $(command git log --reverse --pretty=format="%H" main.."$branch"); }; f'
 
+# rebase from latest version of main
+alias rebase='f() { local current_branch=$(git branch --show-current); git fetch origin main:main && git rebase main; }; f'
+
+alias standard='(cd ~/Work/core/back-end && bundle exec standardrb --format progress)'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

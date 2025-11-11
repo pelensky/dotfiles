@@ -1,10 +1,9 @@
 # ~/.config/tmuxinator/purposemed.yml
 name: PurposeMed
 root: ~/Work/core/
-
 windows:
   - dashboard:
-      layout: main-vertical
+      layout: 4731,111x28,0,0{84x28,0,0,1,26x28,85,0[26x6,85,0,5,26x6,85,7,6,26x6,85,14,7,26x7,85,21,8]}
       panes:
         - commands:
             - cd back-end
@@ -19,15 +18,23 @@ windows:
         - commands:
             - cd front-end
             - yarn workspace purposemed localstart
-
+        - commands:
+            - cd back-end
+            - bundle exec good_job start
+  - robot:
+      layout: main-vertical
+      root: .
+      panes:
+        - commands:
+            - claude
+        - commands:
+            - claude-glm
   - core:
       root: .
       panes:
-
   - back-end:
       root: back-end
       panes:
-
   - front-end:
       root: front-end
       panes:

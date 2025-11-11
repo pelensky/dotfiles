@@ -45,7 +45,9 @@ require("lazy").setup({
         typescriptreact = { "prettier", "eslint" },
         css = { "prettier" },
         scss = { "prettier", "stylelint" },
-        html = { "prettier" }
+        html = { "prettier" },
+        json = { "prettier" },
+        markdown = { "prettier" }
       }
       vim.api.nvim_set_keymap('n', '<leader>af', ':ALEFix<CR>', { noremap = true, silent = false })
     end

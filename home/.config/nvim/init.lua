@@ -86,6 +86,9 @@ require("lazy").setup({
   -- Copilot
   { "github/copilot.vim" },
 
+  -- Rainbow CSV
+  { "mechatroner/rainbow_csv" },
+
   -- FZF
   {
     "ibhagwan/fzf-lua",

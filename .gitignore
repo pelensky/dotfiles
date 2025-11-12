@@ -2,4 +2,5 @@
 .netrwhist
 home/.vim/bundle/*
 home/.zshrc-e
+home/sensitive
 

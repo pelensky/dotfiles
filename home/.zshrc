@@ -48,7 +48,6 @@ alias hup='cdh && sh ~/.homesick/repos/dotfiles/commit.sh && source ~/.zshrc && 
 alias cds='cd ~/.homesick/repos/dotfiles/home/sensitive'
 alias sup='cds && git add . && git commit -m "Update sensitive configs" && git push && cd - && echo "✅ Sensitive configs updated!"'
 alias sdup='cd ~/.homesick/repos/dotfiles && git submodule update --recursive --remote && echo "✅ Submodules updated!"'
-alias claude='cd ~/.claude'
 
 #############
 # FUNCTIONS

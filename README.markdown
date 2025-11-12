@@ -34,17 +34,34 @@ Next, use the homesick command to clone this repository:
 
     homesick clone pelensky/dotfiles
 
-It will ask if you want to evaluate - at this stage you do not! 
+It will ask if you want to evaluate - at this stage you do not!
 
-you can now link its contents into your home dir:
+## Automated Setup
+
+To automate the setup process:
+
+    ~/.homesick/repos/dotfiles/setup.sh
+
+This will initialize submodules, create symlinks, and install vim plugins. Then restart your terminal.
+
+## Manual Setup (if you prefer)
+
+Initialize submodules:
+
+    cd ~/.homesick/repos/dotfiles
+    git submodule update --init --recursive
+
+Create symlinks:
 
     homesick symlink dotfiles
 
-run the rc file to get vundler installed:
+Create Claude symlink:
+
+    ln -s ~/.homesick/repos/dotfiles/home/sensitive/.claude ~/.claude
+
+Install vim plugins:
 
     homesick rc dotfiles
-
-and restart your terminal.
 
 
 #### iTerm Settings
@@ -53,12 +70,30 @@ navigate to `.homesick/repos/dotfiles/home/` and select `iTermProfiles.json`
 
 ##### When making changes
 
-To commit your changes:
+## Additional Commands
 
+**Main dotfiles:**
+- `hup` - Update, commit and push all dotfiles
+- `cdh` - Navigate to main dotfiles folder
+
+**Sensitive/Claude configs:**
+- `sup` - Commit and push sensitive configs
+- `cds` - Navigate to sensitive configs folder
+- `claude` - Navigate to ~/.claude folder
+- `sdup` - Update submodules (sync changes across computers)
+
+**Manual commands (if needed):**
+
+Main dotfiles:
     homesick commit dotfiles
-
-To push:
-
     homesick push dotfiles
 
-You can now use the `hup` command to update your home files and install your vim bundles automatically.
+Sensitive configurations:
+    cd ~/.homesick/repos/dotfiles/home/sensitive
+    git add .
+    git commit -m "Update sensitive configs"
+    git push
+
+Submodule updates:
+    cd ~/.homesick/repos/dotfiles
+    git submodule update --recursive

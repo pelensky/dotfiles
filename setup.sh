@@ -35,7 +35,7 @@ fi
 
 # Install required Homebrew packages
 echo "Installing required packages..."
-brew_packages=(tmux z git vim nvim ripgrep fzf direnv asdf starship zsh-history-substring-search claude-code)
+brew_packages=(tmux z git nvim ripgrep fzf direnv asdf starship zsh-history-substring-search claude-code gh tmuxinator reattach-to-user-namespace heroku)
 
 for package in "${brew_packages[@]}"; do
     if brew list "$package" &> /dev/null; then
@@ -46,12 +46,46 @@ for package in "${brew_packages[@]}"; do
     fi
 done
 
+# Install fonts
+echo "Installing Nerd Fonts..."
+if brew list --cask font-inconsolata-go-nerd-font &> /dev/null; then
+    echo "font-inconsolata-go-nerd-font already installed"
+else
+    echo "Installing font-inconsolata-go-nerd-font..."
+    brew install --cask font-inconsolata-go-nerd-font
+fi
+
+# Install ngrok
+echo "Installing ngrok..."
+if brew list --cask ngrok &> /dev/null; then
+    echo "ngrok already installed"
+else
+    echo "Installing ngrok..."
+    brew install --cask ngrok
+fi
+
 # Install zsh-nvm plugin if not present
 if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm" ]; then
     echo "Installing zsh-nvm plugin..."
     git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 else
     echo "zsh-nvm plugin already installed"
+fi
+
+# Set up fzf shell integration (keybindings and completion)
+if [ ! -f "$HOME/.fzf.zsh" ]; then
+    echo "Setting up fzf shell integration..."
+    /opt/homebrew/opt/fzf/install --key-bindings --completion --no-update-rc --no-bash --no-fish
+else
+    echo "fzf shell integration already installed"
+fi
+
+# Install Tmux Plugin Manager
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    echo "Installing Tmux Plugin Manager..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+    echo "Tmux Plugin Manager already installed"
 fi
 
 # Initialize submodules
@@ -71,10 +105,6 @@ if [ -d ~/.homesick/repos/dotfiles/home/sensitive/.claude ]; then
 else
     echo "Warning: Sensitive submodule not found - Claude configs not linked"
 fi
-
-# Run vim setup
-echo "Installing vim plugins..."
-homesick rc dotfiles
 
 echo ""
 echo "Setup complete!"

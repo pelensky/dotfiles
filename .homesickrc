@@ -1,29 +1,4 @@
 #!/usr/bin/env ruby
 
-# Check if vundler has been installed, if not install it
-vundle_directory = File.expand_path File.join('~', '.vim', 'bundle', 'Vundle.vim')
-
-unless Dir.exists?(vundle_directory)
-    puts "Installing Vundler..."
-    `git clone https://github.com/gmarik/Vundle.vim.git #{vundle_directory}`
-end
-
-puts "Installing fonts and ZSH plugins"
-`brew install --cask font-inconsolata-go-nerd-font`
-`brew install zsh-history-substring-search`
-`brew install starship`
-
-puts "Configuring tmux"
-`brew install reattach-to-user-namespace`
-
-puts "Installing Tmux Plugin Manager"
-`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-
-puts "Installing tmuxinator"
-`gem install tmuxinator`
-
-puts "Installing awesome print"
-`gem install awesome_print`
-
-puts "Installing nvm"
-`git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm`
+puts "Running dotfiles setup..."
+system("#{ENV['HOME']}/.homesick/repos/dotfiles/setup.sh")

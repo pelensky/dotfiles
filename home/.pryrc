@@ -14,6 +14,5 @@ Pry::Commands.command /^$/ , 'repeat last command' do
   pry_instance.run_command Pry.history.to_a.last
 end
 
-# $LOAD_PATH << '/Users/pelensky/.rvm/gems/ruby-2.6.6/gems/awesome_print-1.8.0/lib/awesome_print.rb'
 require 'amazing_print'
 AmazingPrint.pry!

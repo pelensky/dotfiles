@@ -1,15 +1,16 @@
--- ~/.config/nvim/init.lua
-vim.opt.runtimepath:prepend("~/.vim")
-vim.opt.runtimepath:append("~/.vim/after")
-vim.opt.packpath = vim.opt.runtimepath:get()
-
-vim.cmd('source ~/.vimrc')
+-- ==============================================================================
+-- NEOVIM CONFIGURATION
+-- ==============================================================================
 
 if vim.g.vscode then
-  -- VSCode extension
+  -- VSCode extension - minimal config
 else
-  -- ordinary Neovim
+  -- Full Neovim configuration
 end
+
+-- ==============================================================================
+-- LAZY.NVIM PLUGIN MANAGER SETUP
+-- ==============================================================================
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -24,11 +25,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- ==============================================================================
+-- PLUGINS
+-- ==============================================================================
+
 require("lazy").setup({
+  -- Whitespace management
   { "ntpeters/vim-better-whitespace" },
+
+  -- Window management
   { "roman/golden-ratio" },
+
+  -- File explorer
   { "scrooloose/nerdtree" },
+
+  -- Status line
   { "bling/vim-airline" },
+
+  -- Tmux integration
   { "pivotal/tmux-config" },
 
   -- Linter
@@ -75,7 +89,7 @@ require("lazy").setup({
     end,
   },
 
-  -- Colours
+  -- Color scheme
   {
     "iammerrick/nova-vim",
     config = function()
@@ -83,13 +97,13 @@ require("lazy").setup({
     end,
   },
 
-  -- Copilot
+  -- GitHub Copilot
   { "github/copilot.vim" },
 
   -- Rainbow CSV
   { "mechatroner/rainbow_csv" },
 
-  -- FZF
+  -- FZF fuzzy finder
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -105,7 +119,7 @@ require("lazy").setup({
 
   -- LSP + Autocomplete
   {
-"neovim/nvim-lspconfig",
+    "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
       local cmp_lsp = require("cmp_nvim_lsp")
@@ -127,12 +141,12 @@ require("lazy").setup({
                 only = { "source.organizeImports" },
                 diagnostics = {},
               },
-	      apply = true,
+              apply = true,
             })
-	    -- Then run ALEFix
-	    vim.defer_fn(function()
-	      vim.cmd("ALEFix")
-	    end, 50)
+            -- Then run ALEFix
+            vim.defer_fn(function()
+              vim.cmd("ALEFix")
+            end, 50)
           end, opts)
         end,
         filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
@@ -140,6 +154,8 @@ require("lazy").setup({
       })
     end,
   },
+
+  -- Autocompletion
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -171,13 +187,94 @@ require("lazy").setup({
   },
 })
 
--- Disable mouse
+-- ==============================================================================
+-- BASIC SETTINGS
+-- ==============================================================================
+
+vim.opt.number = true
+vim.opt.numberwidth = 5
+vim.opt.cursorline = true
+vim.opt.scrolloff = 3
+vim.opt.showmatch = true
+vim.opt.autoread = true
+vim.opt.swapfile = false
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.fileformat = "unix"
+vim.opt.background = "dark"
+vim.opt.autoindent = true
+vim.opt.smartindent = false
+vim.opt.backspace = "indent,eol,start"
+vim.opt.laststatus = 2
+vim.opt.cmdheight = 2
 vim.opt.mouse = ""
+
+-- Leader key
+vim.g.mapleader = ","
+
+-- Clipboard
+vim.o.clipboard = 'unnamedplus'
+
+-- Highlight trailing whitespace
+vim.cmd([[match Error /\s\+$/]])
+
+-- ==============================================================================
+-- PLUGIN CONFIGURATION
+-- ==============================================================================
+
+-- NERDTree
+vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>', { noremap = true })
+vim.g.NERDTreeShowHidden = 1
+
+-- ==============================================================================
+-- KEYBINDINGS
+-- ==============================================================================
+
+-- Movement - j/k move through wrapped lines
+vim.keymap.set('n', 'j', 'gj', { noremap = true })
+vim.keymap.set('n', 'k', 'gk', { noremap = true })
+vim.keymap.set('n', 'gj', 'j', { noremap = true })
+vim.keymap.set('n', 'gk', 'k', { noremap = true })
+
+-- Disable arrow keys
+vim.keymap.set('n', '<up>', '<Nop>', { noremap = true })
+vim.keymap.set('n', '<down>', '<Nop>', { noremap = true })
+vim.keymap.set('n', '<left>', '<Nop>', { noremap = true })
+vim.keymap.set('n', '<right>', '<Nop>', { noremap = true })
+
+-- Command typo fixes
+vim.cmd([[
+  command! W w
+  command! Q q
+  command! WQ wq
+  command! Wq wq
+]])
+
+-- Strip whitespace
+vim.keymap.set('n', '<leader>ws', ':StripWhitespace<CR>', { noremap = true })
+
+-- Reindent entire file
+vim.keymap.set('n', '==', 'gg=G``', { noremap = true })
+
+-- ==============================================================================
+-- ADVANCED FEATURES
+-- ==============================================================================
+
+-- Enable matchit for % jumping between tags
+vim.cmd([[packadd! matchit]])
+
+-- Use ripgrep for grep if available
+if vim.fn.executable('rg') == 1 then
+  vim.opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
+end
 
 -- Filetype detection
 vim.cmd [[
   autocmd BufNewFile,BufRead .env.*  setf dosini
 ]]
 
--- Clipboard
-vim.o.clipboard = 'unnamedplus'
+-- Spell check for markdown and git commits
+vim.cmd [[
+  autocmd FileType markdown setlocal spell
+  autocmd FileType gitcommit setlocal spell
+]]

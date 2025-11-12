@@ -1,5 +1,4 @@
-../../usr/local/opt/fzf/plugin
-../../usr/local/Cellar/fzf/0.17.3/plugin
 .config/tmuxinator
 .config
 Library/Application Support/Code/User
+Library/Application Support/iTerm2/DynamicProfiles

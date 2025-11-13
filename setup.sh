@@ -93,6 +93,14 @@ echo "Initializing submodules..."
 cd ~/.homesick/repos/dotfiles
 git submodule update --init --recursive
 
+# Update sensitive submodule to track main branch
+echo "Updating sensitive submodule to track main branch..."
+git submodule foreach 'if [ "$path" = "home/sensitive" ]; then git checkout main 2>/dev/null || git switch main 2>/dev/null || echo "Already on main branch"; fi'
+
+# Update submodules to latest remote
+echo "Updating submodules to latest versions..."
+git submodule update --remote
+
 # Create symlinks for main dotfiles
 echo "Creating symlinks for main dotfiles..."
 homesick symlink dotfiles
@@ -116,4 +124,5 @@ echo "  sdup   - Update submodules"
 echo "  cdh    - Go to main dotfiles"
 echo "  cds    - Go to sensitive configs"
 echo ""
+echo "To update sensitive configs: sup"
 echo "To commit sensitive configs: cds → git add . → git commit → git push"

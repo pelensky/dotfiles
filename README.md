@@ -1,8 +1,17 @@
 # Dotfiles
 
-This contains all my dotfille configurations (in particular my vim setup) so that I can share it across computers. Before you go diving in, please be aware that there are a few pre-requisites:
+This contains all my dotfile configurations (in particular my vim setup) so that I can share it across computers. Before you go diving in, please be aware that there are a few pre-requisites:
 
 This repo is designed to work with [homesick](https://github.com/technicalpickles/homesick) which handles all my symlinking for me automatically. Much of the configuration is inspired by [Thoughtbot's dotfiles](https://github.com/thoughtbot/dotfiles).
+
+## Sensitive Files Management
+
+This repository uses a git submodule (`home/sensitive`) for private configs that shouldn't be public:
+
+- API keys, tokens, Claude Code credentials
+- Private configurations with secrets
+
+**Why a submodule?** Keeps sensitive data separate while maintaining version control across machines.
 
 **Requirements:** The setup script will automatically install:
 - Homesick (for dotfile management)
@@ -19,6 +28,12 @@ Next step is to FORK this repository, then clone it via homesick:
 
 It will ask if you want to evaluate - at this stage you do not!
 
+### Setting Up Your Sensitive Submodule
+
+1. **Create a private repository** on GitHub (e.g., `your-username/sensitive-dotfiles`)
+2. **Update `.gitmodules`** to point to your private repository
+3. **Add your sensitive files** and the setup script will handle the rest
+
 ## Automated Setup
 
 The setup script handles all pre-installations and configuration:
@@ -32,9 +47,17 @@ This will install all dependencies, create symlinks, and set up everything you n
 After forking, update these files with your personal info:
 
 1. **`home/.gitconfig`** - Change name and email to yours
-2. **`.gitmodules`** - Update the sensitive-dotfiles URL to your fork (or remove if not using)
+2. **`.gitmodules`** - Update the sensitive-dotfiles URL to your private repository
+3. **Create your sensitive submodule** with private configs before running setup
 
 Everything else uses `~` or `$HOME` and will work across different machines!
+
+### Working with the Sensitive Submodule
+
+The submodule works like a separate git repo:
+
+Adding files: `cds` → add files → `git add . && git commit && git push`
+Sync across computers: `sup` (pulls latest sensitive configs)
 
 ## Additional Commands
 
@@ -43,9 +66,9 @@ Everything else uses `~` or `$HOME` and will work across different machines!
 - `cdh` - Navigate to main dotfiles folder
 
 **Sensitive/Claude configs:**
-- `sup` - Commit and push sensitive configs
+- `sup` - Commit and push sensitive configs (ensures main branch tracking)
 - `cds` - Navigate to sensitive configs folder
-- `sdup` - Update submodules (sync changes across computers)
+- `sdup` - Update all submodules (sync changes across computers)
 
 **Manual commands (if needed):**
 

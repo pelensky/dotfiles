@@ -4,3 +4,4 @@
 [submodule "home/sensitive"]
 	path = home/sensitive
 	url = git@github.com:pelensky/sensitive-dotfiles.git
+	branch = main

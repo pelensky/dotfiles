@@ -35,7 +35,7 @@ fi
 
 # Install required Homebrew packages
 echo "Installing required packages..."
-brew_packages=(tmux z git nvim ripgrep fzf direnv asdf starship zsh-history-substring-search claude-code gh tmuxinator reattach-to-user-namespace heroku)
+brew_packages=(tmux z git nvim ripgrep fzf direnv asdf starship zsh-history-substring-search gh tmuxinator reattach-to-user-namespace heroku)
 
 for package in "${brew_packages[@]}"; do
     if brew list "$package" &> /dev/null; then
@@ -86,6 +86,14 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 else
     echo "Tmux Plugin Manager already installed"
+fi
+
+# Install Claude Code
+if [ ! -d "$HOME/.local/bin/claude" ]; then
+    echo "Installing Claude Code..."
+    curl -fsSL https://claude.ai/install.sh | bash
+else
+    echo "Claude Code already installed"
 fi
 
 # Initialize submodules

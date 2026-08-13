@@ -4,8 +4,8 @@
 [push]
   default = simple
 [core]
-  excludesfile = ~/.gitignore_global
-  editor = vim
+	excludesfile = /Users/danpelensky/.gitignore_global
+	editor = nvim
   autocrlf = input
   safecrlf = false
   pager  = less -RFX
@@ -164,3 +164,5 @@
 	cmd = code --wait --diff $LOCAL $REMOTE\n
 [init]
 	defaultBranch = main
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials

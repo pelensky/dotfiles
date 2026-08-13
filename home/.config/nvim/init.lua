@@ -3,7 +3,8 @@
 -- ==============================================================================
 
 if vim.g.vscode then
-  -- VSCode extension - minimal config
+  -- VSCode extension - load VSCode-specific keymaps
+  require('user.vscode_keymaps')
 else
   -- Full Neovim configuration
 end
@@ -61,9 +62,9 @@ require("lazy").setup({
         scss = { "prettier", "stylelint" },
         html = { "prettier" },
         json = { "prettier" },
-        markdown = { "prettier" }
+        markdown = { "prettier" },
+        xml = { "xmllint" }
       }
-      vim.api.nvim_set_keymap('n', '<leader>af', ':ALEFix<CR>', { noremap = true, silent = false })
     end
   },
 
@@ -74,7 +75,7 @@ require("lazy").setup({
     event = "BufReadPost",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "css", "html", "javascript", "lua", "svelte", "typescript" },
+        ensure_installed = { "css", "html", "javascript", "lua", "ruby", "svelte", "typescript" },
       })
     end,
   },
@@ -121,10 +122,9 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
       local cmp_lsp = require("cmp_nvim_lsp")
 
-      lspconfig.ts_ls.setup({
+      vim.lsp.config("ts_ls", {
         capabilities = cmp_lsp.default_capabilities(),
         on_attach = function(_, bufnr)
           local opts = { buffer = bufnr }
@@ -150,8 +150,9 @@ require("lazy").setup({
           end, opts)
         end,
         filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-        root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
+        root_markers = { "tsconfig.json", "package.json", ".git" },
       })
+      vim.lsp.enable("ts_ls")
     end,
   },
 
@@ -200,7 +201,7 @@ vim.opt.autoread = true
 vim.opt.swapfile = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.fileformat = "unix"
+vim.opt_global.fileformat = "unix"
 vim.opt.background = "dark"
 vim.opt.autoindent = true
 vim.opt.smartindent = false
@@ -255,6 +256,9 @@ vim.keymap.set('n', '<leader>ws', ':StripWhitespace<CR>', { noremap = true })
 
 -- Reindent entire file
 vim.keymap.set('n', '==', 'gg=G``', { noremap = true })
+
+-- ALE fix command
+vim.keymap.set('n', '<leader>af', ':ALEFix<CR>', { noremap = true, silent = false })
 
 -- ==============================================================================
 -- ADVANCED FEATURES

@@ -2,39 +2,41 @@
 name: PurposeMed
 root: ~/Work/core/
 windows:
-  - dashboard:
+  - 📊:
       layout: 4731,111x28,0,0{84x28,0,0,1,26x28,85,0[26x6,85,0,5,26x6,85,7,6,26x6,85,14,7,26x7,85,21,8]}
       panes:
         - commands:
-            - cd back-end
+            - cd ~/Work/core/back-end
             - pg_ctl start || true
             - bin/run-dev
         - commands:
-            - cd front-end
+            - cd ~/Work/core/front-end
             - yarn workspace freddie localstart
         - commands:
-            - cd front-end
+            - cd ~/Work/core/front-end
             - yarn workspace frida localstart
         - commands:
-            - cd front-end
+            - cd ~/Work/core/front-end
             - yarn workspace purposemed localstart
         - commands:
-            - cd back-end
+            - cd ~/Work/core/back-end
             - bundle exec good_job start
-  - robot:
-      layout: main-vertical
-      root: .
+  - 🤖:
+      root: ~/Work/core/
       panes:
         - commands:
             - claude
+  - 🔎:
+      root: ~/Work/core/
+      panes:
         - commands:
-            - claude-glm
-  - core:
-      root: .
+            - claude
+  - 🍏:
+      root: ~/Work/core/
       panes:
-  - back-end:
-      root: back-end
+  - ⬅️:
+      root: ~/Work/core/back-end
       panes:
-  - front-end:
-      root: front-end
+  - ➡️:
+      root: ~/Work/core/front-end
       panes:

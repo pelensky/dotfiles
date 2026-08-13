@@ -296,7 +296,7 @@
   },
   "Window Type" : 0,
   "Blur Radius" : 30,
-  "Initial Text" : "if [[ -z \"$TMUX\" ]]; then i=1; while tmux has-session -t \"purposemed-$i\" 2>/dev/null; do i=$((i+1)); done; tmuxinator start purposemed -n \"purposemed-$i\"; fi",
+  "Initial Text" : "tmuxinator start purposemed;",
   "Background Image Location" : "",
   "Blur" : true,
   "Badge Color" : {
